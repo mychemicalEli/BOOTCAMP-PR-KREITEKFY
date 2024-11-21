@@ -35,3 +35,6 @@
 /Users/mychemical_eli/Desktop/Ejercicios practicas/BOOTCAMP-PR-KREITEFY/api/api/obj/Debug/net9.0/api.pdb
 /Users/mychemical_eli/Desktop/Ejercicios practicas/BOOTCAMP-PR-KREITEFY/api/api/obj/Debug/net9.0/api.genruntimeconfig.cache
 /Users/mychemical_eli/Desktop/Ejercicios practicas/BOOTCAMP-PR-KREITEFY/api/api/obj/Debug/net9.0/ref/api.dll
+/Users/mychemical_eli/Desktop/Ejercicios practicas/BOOTCAMP-PR-KREITEFY/api/api/bin/Debug/net9.0/Microsoft.EntityFrameworkCore.dll
+/Users/mychemical_eli/Desktop/Ejercicios practicas/BOOTCAMP-PR-KREITEFY/api/api/bin/Debug/net9.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/Users/mychemical_eli/Desktop/Ejercicios practicas/BOOTCAMP-PR-KREITEFY/api/api/bin/Debug/net9.0/Microsoft.EntityFrameworkCore.InMemory.dll

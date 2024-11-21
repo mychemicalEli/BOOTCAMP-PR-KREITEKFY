@@ -8,7 +8,17 @@
 
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.0"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="9.0.0" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="7.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Application\Dtos\" />
+      <Folder Include="Application\Mappers\" />
+      <Folder Include="Application\Services\" />
+      <Folder Include="Domain\Entities\" />
+      <Folder Include="Domain\Persistence\" />
+      <Folder Include="Infrastructure\Rest\" />
     </ItemGroup>
 
 </Project>
