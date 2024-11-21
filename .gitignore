@@ -43,3 +43,13 @@ package-lock.json
 # macOS folder attributes
 .Spotlight-V100
 .Trashes
+
+# Ignorar archivos de compilación de .NET
+/api/api/obj/
+/api/api/bin/
+
+/# Ignorar archivos específicos de Rider
+.idea/
+
+# Ignorar archivos generados por NuGet
+*.nuget/
