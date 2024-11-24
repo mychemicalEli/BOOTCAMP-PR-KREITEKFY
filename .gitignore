@@ -38,6 +38,10 @@ project.assets.json
 project.nuget.cache
 project.packagespec.json
 
+# Ignorar carpetas de compilación
+bin/
+obj/
+
 # Logs y depuración
 npm-debug.log*
 yarn-debug.log*
