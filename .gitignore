@@ -45,10 +45,11 @@ package-lock.json
 .Trashes
 
 # Ignorar archivos de compilación de .NET
-/api/api/obj/
-/api/api/bin/
+api/obj/
+api/bin/
+site/public/*.drawio
 
-/# Ignorar archivos específicos de Rider
+# Ignorar archivos específicos de Rider
 .idea/
 
 # Ignorar archivos generados por NuGet
