@@ -9,23 +9,8 @@ public class KreitekfyContext : DbContext
     {
     }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-        base.OnConfiguring(optionsBuilder);
-    }
-
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<User>()
-            .Property(u => u.RowVersion)
-            .IsRowVersion()
-            .IsConcurrencyToken();
-
-        modelBuilder.Entity<Song>()
-            .Property(i => i.RowVersion)
-            .IsRowVersion()
-            .IsConcurrencyToken();
-
         modelBuilder.Entity<UserSongs>()
             .HasOne<User>()
             .WithMany()

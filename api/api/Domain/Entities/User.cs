@@ -30,5 +30,5 @@ public class User
     public string Password { get; set; }
 
     [Required] public Roles Role { get; set; }
-    [Timestamp] public byte[] RowVersion { get; set; }
+ 
 }

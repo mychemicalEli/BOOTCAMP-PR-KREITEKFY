@@ -21,5 +21,5 @@ public class Song
     [Required] [Range(1, 4)] public decimal Rating { get; set; }
     [Required] [Range(0, long.MaxValue)] public long Streams { get; set; }
     [Required] public DateTime ReleaseDate { get; set; }
-    [Timestamp] public byte[] RowVersion { get; set; }
+  
 }
