@@ -21,4 +21,8 @@
       <Folder Include="Infrastructure\Rest\" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\framework\framework.csproj" />
+    </ItemGroup>
+
 </Project>
