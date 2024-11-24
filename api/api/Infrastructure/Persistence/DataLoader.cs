@@ -9,5 +9,7 @@ public class DataLoader
         _kreitekfyContext = kreitekfyContext;
     }
 
-    public void LoadData(){}
+    public void LoadData()
+    {
+    }
 }
