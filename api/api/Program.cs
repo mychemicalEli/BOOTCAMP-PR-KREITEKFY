@@ -16,6 +16,7 @@ if (builder.Environment.IsDevelopment())
     builder.Services.AddDbContext<KreitekfyContext>(options =>
         options.UseInMemoryDatabase(connectionString));
 }
+
 var app = builder.Build();
 ConfigureExceptionhandler(app);
 
