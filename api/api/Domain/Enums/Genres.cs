@@ -3,9 +3,7 @@ namespace api.Domain.Enums;
 public enum Genres
 {
     Rock,
-    Pop,
-    Indie,
-    Rap,
+    PopPunk,
     Metal,
-    Punk
+    Pop
 }

@@ -15,5 +15,4 @@ public class SongDto:IDto
     public decimal Rating { get; set; }
     public long Streams { get; set; }
     public DateTime ReleaseDate { get; set; }
-    public byte[] RowVersion { get; set; }
 }
