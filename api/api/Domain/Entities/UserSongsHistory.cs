@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace api.Domain.Entities;
 
-public class History
+public class UserSongsHistory
 {
     public long Id { get; set; }    
     public long UserId { get; set; }
