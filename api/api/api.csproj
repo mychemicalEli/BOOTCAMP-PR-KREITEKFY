@@ -16,9 +16,12 @@
       <Folder Include="Application\Dtos\" />
       <Folder Include="Application\Mappers\" />
       <Folder Include="Application\Services\" />
-      <Folder Include="Domain\Entities\" />
       <Folder Include="Domain\Persistence\" />
       <Folder Include="Infrastructure\Rest\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\framework\framework.csproj" />
     </ItemGroup>
 
 </Project>
