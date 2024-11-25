@@ -13,12 +13,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Application\Services\" />
-      <Folder Include="Domain\Persistence\" />
-      <Folder Include="Infrastructure\Rest\" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\framework\framework.csproj" />
     </ItemGroup>
 
