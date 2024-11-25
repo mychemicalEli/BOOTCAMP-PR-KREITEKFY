@@ -23,17 +23,15 @@ namespace api.Infrastructure.Persistence
         public PagedList<SongDto> GetSongsByCriteriaPaged(string? filter, PaginationParameters paginationParameters)
         {
             var songs = _context.Songs.AsQueryable();
-
-            // Aplica el filtro de género si se proporciona
+            
             songs = SongFilters.ApplyFilter(songs, filter, _specificationParser);
-
-            // Aplica ordenamiento si se proporciona
+            songs = SongFilters.ApplySortOrder(songs, paginationParameters.Sort);
+            
             if (!string.IsNullOrEmpty(paginationParameters.Sort))
             {
-                songs = ApplySortOrder(songs, paginationParameters.Sort);
+                songs = SongFilters.ApplySortOrder(songs, paginationParameters.Sort);
             }
-
-            // Proyección de las canciones a DTOs
+            
             var songsDto = songs.Select(i => new SongDto()
             {
                 Id = i.Id,
@@ -47,8 +45,7 @@ namespace api.Infrastructure.Persistence
                 Rating = i.Rating,
                 AddedAt = i.AddedAt
             });
-
-            // Devuelve los resultados paginados
+            
             return PagedList<SongDto>.ToPagedList(songsDto, paginationParameters.PageNumber, paginationParameters.PageSize);
         }
     }
