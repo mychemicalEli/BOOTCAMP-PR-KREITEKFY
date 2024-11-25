@@ -1,5 +1,6 @@
 using api.Application.Dtos;
 using api.Domain.Entities;
+using api.Domain.Enums;
 using api.Domain.Persistence;
 using AutoMapper;
 using framework.Application;
@@ -40,5 +41,10 @@ public class SongService : GenericService<Song, SongDto>, ISongService
         if (!_imageVerifier.IsImage(dto.AlbumCover))
             throw new InvalidImageException();
         return base.Update(dto);
+    }
+    
+    public IEnumerable<SongDto> GetLatestSongs(int count = 5, Genres? genre = null)
+    {
+        return _repository.GetLatestSongs(count, genre);
     }
 }
