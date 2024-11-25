@@ -1,5 +1,6 @@
 using api.Application.Dtos;
 using api.Application.Services;
+using api.Domain.Enums;
 using framework.Application;
 using framework.Domain.Persistence;
 using framework.Infrastructure.Rest;
@@ -75,4 +76,37 @@ public class SongsController : GenericCrudController<SongDto>
             return BadRequest();
         }
     }
+    
+    [HttpGet("latest")]
+    [Produces("application/json")]
+    public ActionResult<IEnumerable<SongDto>> GetLatestSongs([FromQuery] int count = 5, [FromQuery] Genres? genre = null)
+    {
+        try
+        {
+            var songs = _service.GetLatestSongs(count, genre);
+            return Ok(songs);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error fetching latest songs.");
+            return StatusCode(500, "Internal server error");
+        }
+    }
+    
+    [HttpGet("mostPlayed")]
+    [Produces("application/json")]
+    public ActionResult<IEnumerable<SongDto>> GetMostPlayedSongs([FromQuery] int count = 5, [FromQuery] Genres? genre = null)
+    {
+        try
+        {
+            var songs = _service.GetMostPlayedSongs(count, genre);
+            return Ok(songs);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error fetching latest songs.");
+            return StatusCode(500, "Internal server error");
+        }
+    }
+
 }
