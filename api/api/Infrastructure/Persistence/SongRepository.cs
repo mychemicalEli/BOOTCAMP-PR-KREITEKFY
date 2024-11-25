@@ -39,7 +39,7 @@ namespace api.Infrastructure.Persistence
                 Artist = i.Artist,
                 AlbumCover = i.AlbumCover,
                 Genre = i.Genre,
-                Duration = $"{i.Duration.Minutes:D2}:{i.Duration.Seconds:D2}",
+                Duration = TimeSpanConverter.ToString(i.Duration),
                 Streams = i.Streams,
                 Rating = i.Rating,
                 AddedAt = i.AddedAt
