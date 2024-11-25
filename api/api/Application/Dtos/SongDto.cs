@@ -11,8 +11,8 @@ public class SongDto:IDto
     public string Album { get; set; }
     public byte[] AlbumCover { get; set; }
     public Genres Genre { get; set; }
-    public TimeSpan Duration { get; set; }
+    public string Duration { get; set; }
     public decimal Rating { get; set; }
     public long Streams { get; set; }
-    public DateTime ReleaseDate { get; set; }
+    public DateTime AddedAt { get; set; }
 }

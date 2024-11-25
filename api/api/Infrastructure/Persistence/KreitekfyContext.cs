@@ -8,6 +8,10 @@ public class KreitekfyContext : DbContext
     public KreitekfyContext(DbContextOptions<KreitekfyContext> options) : base(options)
     {
     }
+    protected override void OnConfiguring(DbContextOptionsBuilder _optionsBuilder)
+    {
+        base.OnConfiguring(_optionsBuilder);
+    }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
