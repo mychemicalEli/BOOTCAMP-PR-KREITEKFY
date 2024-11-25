@@ -25,11 +25,10 @@ namespace api.Infrastructure.Persistence
             var songs = _context.Songs.AsQueryable();
             
             songs = SongFilters.ApplyFilter(songs, filter, _specificationParser);
-            songs = SongFilters.ApplySortOrder(songs, paginationParameters.Sort);
             
             if (!string.IsNullOrEmpty(paginationParameters.Sort))
             {
-                songs = SongFilters.ApplySortOrder(songs, paginationParameters.Sort);
+                songs = ApplySortOrder(songs, paginationParameters.Sort);
             }
             
             var songsDto = songs.Select(i => new SongDto()

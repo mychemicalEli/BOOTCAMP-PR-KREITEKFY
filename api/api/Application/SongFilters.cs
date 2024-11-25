@@ -44,22 +44,5 @@ namespace api.Application
 
             return songs;
         }
-
-        public static IQueryable<Song> ApplySortOrder(IQueryable<Song> songs, string sort)
-        {
-            if (string.IsNullOrEmpty(sort))
-                return songs;
-
-            if (sort.Equals("addedAtDesc", StringComparison.OrdinalIgnoreCase))
-            {
-                songs = songs.OrderByDescending(s => s.AddedAt);
-            }
-            else if (sort.Equals("addedAtAsc", StringComparison.OrdinalIgnoreCase))
-            {
-                songs = songs.OrderBy(s => s.AddedAt);
-            }
-
-            return songs;
-        }
     }
 }
