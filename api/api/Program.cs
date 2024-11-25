@@ -2,6 +2,7 @@ using System.Text.Json.Serialization;
 using api.Application.Mappers;
 using api.Application.Services;
 using api.Domain.Persistence;
+using api.Domain.Services;
 using api.Infrastructure.Persistence;
 using framework.Infrastructure.Specs;
 using Microsoft.AspNetCore.Diagnostics;
@@ -15,6 +16,7 @@ builder.Services.AddScoped<ISongRepository, SongRepository>();
 builder.Services.AddAutoMapper(typeof(UserMapperProfile));
 builder.Services.AddAutoMapper(typeof(SongMapperProfile));
 builder.Services.AddScoped(typeof(ISpecificationParser<>), typeof(SpecificationParser<>));
+builder.Services.AddScoped<IImageVerifier, ImageVerifier>();
 
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
@@ -22,6 +24,7 @@ builder.Services.AddControllers()
         options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
     });
 
+builder.Services.AddLogging();
 builder.Services.AddRouting(options => options.LowercaseUrls = true);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
