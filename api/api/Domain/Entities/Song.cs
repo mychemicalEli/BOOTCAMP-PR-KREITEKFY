@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 using api.Domain.Enums;
 
 namespace api.Domain.Entities;
@@ -14,12 +15,11 @@ public class Song
     [Required] public byte[] AlbumCover { get; set; }
 
     [Required]
-    [EnumDataType(typeof(Genres))]
     public Genres Genre { get; set; }
 
     [Required] public TimeSpan Duration { get; set; }
     [Required] [Range(1, 4)] public decimal Rating { get; set; }
     [Required] [Range(0, long.MaxValue)] public long Streams { get; set; }
-    [Required] public DateTime ReleaseDate { get; set; }
+    public DateTime AddedAt { get; set; } = DateTime.Now;
   
 }

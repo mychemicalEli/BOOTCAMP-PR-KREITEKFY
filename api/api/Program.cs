@@ -3,16 +3,25 @@ using api.Application.Mappers;
 using api.Application.Services;
 using api.Domain.Persistence;
 using api.Infrastructure.Persistence;
+using framework.Infrastructure.Specs;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<ISongService, SongService>();
+builder.Services.AddScoped<ISongRepository, SongRepository>();
 builder.Services.AddAutoMapper(typeof(UserMapperProfile));
+builder.Services.AddAutoMapper(typeof(SongMapperProfile));
+builder.Services.AddScoped(typeof(ISpecificationParser<>), typeof(SpecificationParser<>));
 
 builder.Services.AddControllers()
-    .AddJsonOptions(options => { options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()); });
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+    });
+
 builder.Services.AddRouting(options => options.LowercaseUrls = true);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

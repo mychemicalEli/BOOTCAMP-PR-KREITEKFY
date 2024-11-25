@@ -138,7 +138,7 @@ public class DataLoader
             {
                 Title = "So Far Away", Artist = "Avenged Sevenfold", Album = "Nightmare", AlbumCover = nightmareCover,
                 Genre = Genres.Metal, Duration = new TimeSpan(0, 5, 12), Rating = 4.2m, Streams = 1000000,
-                ReleaseDate = new DateTime(2010, 07, 27)
+                AddedAt = DateTime.UtcNow
             },
 
             new Song
@@ -146,59 +146,59 @@ public class DataLoader
                 Title = "Bat Country", Artist = "Avenged Sevenfold", Album = "City of Evil",
                 AlbumCover = cityOfEvilCover,
                 Genre = Genres.Metal, Duration = new TimeSpan(0, 5, 14), Rating = 3.6m, Streams = 8000000,
-                ReleaseDate = new DateTime(2005, 06, 07)
+                AddedAt = DateTime.UtcNow
             },
             new Song
             {
                 Title = "Beast and the Harlot", Artist = "Avenged Sevenfold", Album = "City of Evil",
                 AlbumCover = cityOfEvilCover,
                 Genre = Genres.Metal, Duration = new TimeSpan(0, 5, 41), Rating = 3.9m, Streams = 5000000,
-                ReleaseDate = new DateTime(2006, 02, 27)
+                AddedAt = DateTime.UtcNow
             },
             new Song
             {
                 Title = "Nightmare", Artist = "Avenged Sevenfold", Album = "Nightmare", AlbumCover = nightmareCover,
                 Genre = Genres.Metal, Duration = new TimeSpan(0, 6, 16), Rating = 4m, Streams = 7200000,
-                ReleaseDate = new DateTime(2010, 07, 27)
+                AddedAt = DateTime.UtcNow
             },
             new Song
             {
                 Title = "Popular Monster", Artist = "Falling in Reverse", Album = "Popular Monster",
                 AlbumCover = popularMonsterCover,
                 Genre = Genres.Metal, Duration = new TimeSpan(0, 3, 30), Rating = 2.8m, Streams = 3500000,
-                ReleaseDate = new DateTime(2019, 11, 07)
+                AddedAt = DateTime.UtcNow
             },
             new Song
             {
                 Title = "The Drug in Me is You", Artist = "Falling in Reverse", Album = "The Drug in Me is You",
                 AlbumCover = drugInMeCover,
                 Genre = Genres.Metal, Duration = new TimeSpan(0, 4, 00), Rating = 3.2m, Streams = 4000000,
-                ReleaseDate = new DateTime(2011, 07, 26)
+                AddedAt = DateTime.UtcNow
             },
             new Song
             {
                 Title = "I'm not a Vampire", Artist = "Falling in Reverse", Album = "The Drug in Me is You",
                 AlbumCover = drugInMeCover,
                 Genre = Genres.Metal, Duration = new TimeSpan(0, 4, 02), Rating = 4m, Streams = 3200000,
-                ReleaseDate = new DateTime(2011, 07, 26)
+                AddedAt = DateTime.UtcNow
             },
             new Song
             {
                 Title = "In the End", Artist = "Linkin Park", Album = "Hybrid Theory", AlbumCover = hybridTheoryCover,
                 Genre = Genres.Metal, Duration = new TimeSpan(0, 3, 36), Rating = 4m, Streams = 10000000,
-                ReleaseDate = new DateTime(2001, 10, 24)
+                AddedAt = DateTime.UtcNow
             },
             new Song
             {
                 Title = "Crawling", Artist = "Linkin Park", Album = "Hybrid Theory", AlbumCover = hybridTheoryCover,
                 Genre = Genres.Metal, Duration = new TimeSpan(0, 3, 29), Rating = 2.4m, Streams = 9000000,
-                ReleaseDate = new DateTime(2001, 04, 01)
+                AddedAt = DateTime.UtcNow
             },
             new Song
             {
                 Title = "Numb", Artist = "Linkin Park", Album = "Meteora", AlbumCover = hybridTheoryCover,
                 Genre = Genres.Metal, Duration = new TimeSpan(0, 3, 06), Rating = 3.3m, Streams = 9500000,
-                ReleaseDate = new DateTime(2003, 03, 25)
+                AddedAt = DateTime.UtcNow
             },
 
             //PopPunk
@@ -208,14 +208,14 @@ public class DataLoader
                 Title = "I Think I'm OKAY", Artist = "Machine Gun Kelly", Album = "Hotel Diablo",
                 AlbumCover = hotelDiabloCover,
                 Genre = Genres.PopPunk, Duration = new TimeSpan(0, 2, 49), Rating = 4m, Streams = 5500000,
-                ReleaseDate = new DateTime(2019, 07, 05)
+                AddedAt = DateTime.UtcNow
             },
             new Song
             {
                 Title = "Bloody Valentine", Artist = "Machine Gun Kelly", Album = "Tickets to My Downfall",
                 AlbumCover = ticketsCover,
                 Genre = Genres.PopPunk, Duration = new TimeSpan(0, 2, 40), Rating = 3.6m, Streams = 8000000,
-                ReleaseDate = new DateTime(2020, 09, 25)
+                AddedAt = DateTime.UtcNow
             },
 
             new Song
@@ -223,14 +223,14 @@ public class DataLoader
                 Title = "My Ex's Best Friend", Artist = "Machine Gun Kelly", Album = "Tickets to My Downfall",
                 AlbumCover = ticketsCover,
                 Genre = Genres.PopPunk, Duration = new TimeSpan(0, 2, 45), Rating = 4m, Streams = 7000000,
-                ReleaseDate = new DateTime(2020, 09, 25)
+                AddedAt = DateTime.UtcNow
             },
             new Song
             {
                 Title = "Love Race", Artist = "Machine Gun Kelly feat. Kells", Album = "Tickets to My Downfall",
                 AlbumCover = ticketsCover,
                 Genre = Genres.PopPunk, Duration = new TimeSpan(0, 2, 58), Rating = 2.6m, Streams = 6000000,
-                ReleaseDate = new DateTime(2020, 09, 25)
+                AddedAt = DateTime.UtcNow
             },
 
             new Song
@@ -238,41 +238,41 @@ public class DataLoader
                 Title = "All the Small Things", Artist = "Blink 182", Album = "Enema of the State",
                 AlbumCover = enemaStateCover,
                 Genre = Genres.PopPunk, Duration = new TimeSpan(0, 2, 51), Rating = 2.9m, Streams = 9500000,
-                ReleaseDate = new DateTime(1999, 06, 01)
+                AddedAt = DateTime.UtcNow
             },
             new Song
             {
                 Title = "What's My Age Again?", Artist = "Blink 182", Album = "Enema of the State",
                 AlbumCover = enemaStateCover,
                 Genre = Genres.PopPunk, Duration = new TimeSpan(0, 2, 23), Rating = 3.9m, Streams = 9000000,
-                ReleaseDate = new DateTime(1999, 04, 13)
+                AddedAt = DateTime.UtcNow
             },
             new Song
             {
                 Title = "Dammit", Artist = "Blink 182", Album = "Dude Ranch", AlbumCover = dudeRanchCover,
                 Genre = Genres.PopPunk, Duration = new TimeSpan(0, 2, 45), Rating = 4m, Streams = 7500000,
-                ReleaseDate = new DateTime(1997, 03, 17)
+                AddedAt = DateTime.UtcNow
             },
             new Song
             {
                 Title = "Weightless", Artist = "All Time Low", Album = "Nothing Personal",
                 AlbumCover = nothingPersonalCover,
                 Genre = Genres.PopPunk, Duration = new TimeSpan(0, 3, 01), Rating = 2.7m, Streams = 7200000,
-                ReleaseDate = new DateTime(2009, 07, 07)
+                AddedAt = DateTime.UtcNow
             },
             new Song
             {
                 Title = "Dear Maria, Count Me In", Artist = "All Time Low", Album = "So Wrong, It's Right",
                 AlbumCover = soWrongCover,
                 Genre = Genres.PopPunk, Duration = new TimeSpan(0, 3, 03), Rating = 2.9m, Streams = 8200000,
-                ReleaseDate = new DateTime(2007, 09, 18)
+                AddedAt = DateTime.UtcNow
             },
             new Song
             {
                 Title = "Poppin' Champagne", Artist = "All Time Low", Album = "So Wrong, It's Right",
                 AlbumCover = soWrongCover,
                 Genre = Genres.PopPunk, Duration = new TimeSpan(0, 3, 25), Rating = 4m, Streams = 6900000,
-                ReleaseDate = new DateTime(2007, 09, 18)
+                AddedAt = DateTime.UtcNow
             },
 
             //Rock
@@ -281,67 +281,67 @@ public class DataLoader
             {
                 Title = "Basket Case", Artist = "Green Day", Album = "Dookie", AlbumCover = dookieCover,
                 Genre = Genres.Rock, Duration = new TimeSpan(0, 3, 03), Rating = 3m, Streams = 10000000,
-                ReleaseDate = new DateTime(1994, 02, 01)
+                AddedAt = DateTime.UtcNow
             },
             new Song
             {
                 Title = "Basket Case", Artist = "Green Day", Album = "Dookie", AlbumCover = dookieCover,
                 Genre = Genres.Rock, Duration = new TimeSpan(0, 3, 03), Rating = 4m, Streams = 10000000,
-                ReleaseDate = new DateTime(1994, 02, 01)
+                AddedAt = DateTime.UtcNow
             },
             new Song
             {
                 Title = "Know Your Enemy", Artist = "Green Day", Album = "21st Century Breakdown",
                 AlbumCover = twentyFirstCover,
                 Genre = Genres.Rock, Duration = new TimeSpan(0, 3, 12), Rating = 3.2m, Streams = 9000000,
-                ReleaseDate = new DateTime(2009, 04, 16)
+                AddedAt = DateTime.UtcNow
             },
             new Song
             {
                 Title = "Helena", Artist = "My Chemical Romance", Album = "The Black Parade",
                 AlbumCover = blackParadeCover,
                 Genre = Genres.Rock, Duration = new TimeSpan(0, 3, 22), Rating = 4m, Streams = 10000000,
-                ReleaseDate = new DateTime(2004, 09, 14)
+                AddedAt = DateTime.UtcNow
             },
             new Song
             {
                 Title = "Welcome to the Black Parade", Artist = "My Chemical Romance", Album = "The Black Parade",
                 AlbumCover = blackParadeCover,
                 Genre = Genres.Rock, Duration = new TimeSpan(0, 5, 11), Rating = 4m, Streams = 13000000,
-                ReleaseDate = new DateTime(2006, 09, 12)
+                AddedAt = DateTime.UtcNow
             },
             new Song
             {
                 Title = "SING", Artist = "My Chemical Romance",
                 Album = "Danger Days: The True Lives of the Fabulous Killjoys", AlbumCover = dangerDaysCover,
                 Genre = Genres.Rock, Duration = new TimeSpan(0, 3, 10), Rating = 3.8m, Streams = 8000000,
-                ReleaseDate = new DateTime(2010, 11, 22)
+                AddedAt = DateTime.UtcNow
             },
             new Song
             {
                 Title = "Na Na Na (Na Na Na Na Na Na Na Na Na)", Artist = "My Chemical Romance",
                 Album = "Danger Days: The True Lives of the Fabulous Killjoys", AlbumCover = dangerDaysCover,
                 Genre = Genres.Rock, Duration = new TimeSpan(0, 4, 06), Rating = 3.3m, Streams = 10500000,
-                ReleaseDate = new DateTime(2010, 10, 22)
+                AddedAt = DateTime.UtcNow
             },
 
             new Song
             {
                 Title = "Torna A Casa", Artist = "Måneskin", Album = "Il Ballo Della Vita", AlbumCover = balloVitaCover,
                 Genre = Genres.Rock, Duration = new TimeSpan(0, 4, 25), Rating = 2.2m, Streams = 8500000,
-                ReleaseDate = new DateTime(2018, 11, 30)
+                AddedAt = DateTime.UtcNow
             },
             new Song
             {
                 Title = "Mamma Mia", Artist = "Måneskin", Album = "Il Ballo Della Vita", AlbumCover = rushCover,
                 Genre = Genres.Rock, Duration = new TimeSpan(0, 3, 30), Rating = 4m, Streams = 9500000,
-                ReleaseDate = new DateTime(2018, 11, 30)
+                AddedAt = DateTime.UtcNow
             },
             new Song
             {
                 Title = "Zitti E Buoni", Artist = "Måneskin", Album = "Rush!", AlbumCover = balloVitaCover,
                 Genre = Genres.Rock, Duration = new TimeSpan(0, 3, 28), Rating = 4m, Streams = 15000000,
-                ReleaseDate = new DateTime(2021, 03, 19)
+                AddedAt = DateTime.UtcNow
             },
 
             //Pop
@@ -351,32 +351,32 @@ public class DataLoader
                 Title = "Born With a Broken Heart", Artist = "Damiano David", Album = "Single",
                 AlbumCover = brokenHeartCover,
                 Genre = Genres.Pop, Duration = new TimeSpan(0, 3, 15), Rating = 4m, Streams = 5000000,
-                ReleaseDate = new DateTime(2024, 06, 09)
+                AddedAt = DateTime.UtcNow
             },
             new Song
             {
                 Title = "Silverlines", Artist = "Damiano David", Album = "Single", AlbumCover = silverlinesCover,
                 Genre = Genres.Pop, Duration = new TimeSpan(0, 3, 04), Rating = 4m, Streams = 4200000,
-                ReleaseDate = new DateTime(2024, 04, 21)
+                AddedAt = DateTime.UtcNow
             },
             new Song
             {
                 Title = "Watermelon Sugar", Artist = "Harry Styles", Album = "Fine Line", AlbumCover = fineLineCover,
                 Genre = Genres.Pop, Duration = new TimeSpan(0, 2, 54), Rating = 3.9m, Streams = 75000000,
-                ReleaseDate = new DateTime(2019, 11, 16)
+                AddedAt = DateTime.UtcNow
             },
             new Song
             {
                 Title = "Adore You", Artist = "Harry Styles", Album = "Fine Line", AlbumCover = fineLineCover,
                 Genre = Genres.Pop, Duration = new TimeSpan(0, 3, 27), Rating = 2.3m, Streams = 55000000,
-                ReleaseDate = new DateTime(2019, 12, 06)
+                AddedAt = DateTime.UtcNow
             },
             new Song
             {
                 Title = "Sign of the Times", Artist = "Harry Styles", Album = "Harry Styles",
                 AlbumCover = harryStylesCover,
                 Genre = Genres.Pop, Duration = new TimeSpan(0, 4, 00), Rating = 2.8m, Streams = 70000000,
-                ReleaseDate = new DateTime(2017, 04, 07)
+                AddedAt = DateTime.UtcNow
             },
 
             new Song
@@ -384,35 +384,35 @@ public class DataLoader
                 Title = "Story of My Life", Artist = "One Direction", Album = "Midnight Memories",
                 AlbumCover = midnightMemoriesCover,
                 Genre = Genres.Pop, Duration = new TimeSpan(0, 4, 05), Rating = 4m, Streams = 65000000,
-                ReleaseDate = new DateTime(2013, 10, 28)
+                AddedAt = DateTime.UtcNow
             },
             new Song
             {
                 Title = "Little Things", Artist = "One Direction", Album = "Midnight Memories",
                 AlbumCover = midnightMemoriesCover,
                 Genre = Genres.Pop, Duration = new TimeSpan(0, 3, 39), Rating = 3.6m, Streams = 45000000,
-                ReleaseDate = new DateTime(2012, 11, 12)
+                AddedAt = DateTime.UtcNow
             },
             new Song
             {
                 Title = "Quédate Conmigo", Artist = "Lala Love You", Album = "Fin del Mundo",
                 AlbumCover = finDelMundoCover,
                 Genre = Genres.Pop, Duration = new TimeSpan(0, 3, 30), Rating = 2.3m, Streams = 3000000,
-                ReleaseDate = new DateTime(2020, 05, 22)
+                AddedAt = DateTime.UtcNow
             },
             new Song
             {
                 Title = "Fin del Mundo", Artist = "Lala Love You", Album = "Fin del Mundo",
                 AlbumCover = finDelMundoCover,
                 Genre = Genres.Pop, Duration = new TimeSpan(0, 3, 12), Rating = 3m, Streams = 3500000,
-                ReleaseDate = new DateTime(2020, 06, 15)
+                AddedAt = DateTime.UtcNow
             },
             new Song
             {
                 Title = "Cowboys de la A3", Artist = "Arde Bogotá", Album = "COWBOYS DE LA A3",
                 AlbumCover = cowboysCover,
                 Genre = Genres.Pop, Duration = new TimeSpan(0, 3, 45), Rating = 2.8m, Streams = 2500000,
-                ReleaseDate = new DateTime(2021, 09, 18)
+                AddedAt = DateTime.UtcNow
             }
         };
 
