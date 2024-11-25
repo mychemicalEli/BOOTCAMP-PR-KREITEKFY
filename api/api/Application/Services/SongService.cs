@@ -47,4 +47,9 @@ public class SongService : GenericService<Song, SongDto>, ISongService
     {
         return _repository.GetLatestSongs(count, genre);
     }
+    
+    public IEnumerable<SongDto> GetMostPlayedSongs(int count = 5, Genres? genre = null)
+    {
+        return _repository.GetMostPlayedSongs(count, genre);
+    }
 }

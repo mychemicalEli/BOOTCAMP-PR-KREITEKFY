@@ -92,5 +92,21 @@ public class SongsController : GenericCrudController<SongDto>
             return StatusCode(500, "Internal server error");
         }
     }
+    
+    [HttpGet("mostPlayed")]
+    [Produces("application/json")]
+    public ActionResult<IEnumerable<SongDto>> GetMostPlayedSongs([FromQuery] int count = 5, [FromQuery] Genres? genre = null)
+    {
+        try
+        {
+            var songs = _service.GetMostPlayedSongs(count, genre);
+            return Ok(songs);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error fetching latest songs.");
+            return StatusCode(500, "Internal server error");
+        }
+    }
 
 }

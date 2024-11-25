@@ -73,6 +73,30 @@ namespace api.Infrastructure.Persistence
 
             return songs;
         }
+        
+        
+        public IEnumerable<SongDto> GetMostPlayedSongs(int count = 5, Genres? genre = null)
+        {
+            var songs = _context.Songs
+                .Where(song => !genre.HasValue || song.Genre == genre)
+                .OrderByDescending(song => song.Streams) 
+                .Take(count) 
+                .Select(i => new SongDto
+                {
+                    Id = i.Id,
+                    Title = i.Title,
+                    Album = i.Album,
+                    Artist = i.Artist,
+                    AlbumCover = i.AlbumCover,
+                    Genre = i.Genre,
+                    Duration = TimeSpanConverter.ToString(i.Duration),
+                    Streams = i.Streams,
+                    Rating = i.Rating,
+                    AddedAt = i.AddedAt
+                });
+
+            return songs;
+        }
 
     }
 }
