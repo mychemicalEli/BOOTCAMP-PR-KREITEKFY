@@ -1,5 +1,6 @@
 using api.Application.Mappers;
-using api.Application.Services;
+using api.Application.Services.Implementations;
+using api.Application.Services.Interfaces;
 using api.Domain.Persistence;
 using api.Domain.Services;
 using api.Infrastructure.Persistence;

@@ -1,5 +1,5 @@
 using api.Application.Dtos;
-using api.Application.Services;
+using api.Application.Services.Interfaces;
 using framework.Infrastructure.Rest;
 using Microsoft.AspNetCore.Mvc;
 

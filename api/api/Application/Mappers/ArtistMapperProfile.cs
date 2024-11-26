@@ -8,7 +8,6 @@ public class ArtistMapperProfile : Profile
 {
     public ArtistMapperProfile()
     {
-        CreateMap<Artist, ArtistDto>();
-        CreateMap<ArtistDto, Artist>();
+        CreateMap<Artist, ArtistDto>().ReverseMap();
     }
 }

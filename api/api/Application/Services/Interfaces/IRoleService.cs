@@ -1,8 +1,7 @@
 using api.Application.Dtos;
-using api.Domain.Entities;
 using framework.Application.Services;
 
-namespace api.Application.Services;
+namespace api.Application.Services.Interfaces;
 
 public interface IRoleService : IGenericService<RoleDto>
 {

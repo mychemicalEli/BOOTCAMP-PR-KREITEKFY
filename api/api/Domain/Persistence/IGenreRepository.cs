@@ -3,7 +3,6 @@ using framework.Domain.Persistence;
 
 namespace api.Domain.Persistence;
 
-public interface IGenreRepository:IGenericRepository<Genre>
+public interface IGenreRepository : IGenericRepository<Genre>
 {
-    
 }

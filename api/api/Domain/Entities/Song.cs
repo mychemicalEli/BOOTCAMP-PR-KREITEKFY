@@ -17,4 +17,5 @@ public class Song
     [Required] [Range(1, 4)] public decimal Rating { get; set; }
     [Required] [Range(0, long.MaxValue)] public long Streams { get; set; }
     public DateTime AddedAt { get; set; } = DateTime.Now;
+    public ICollection<Album> Albums { get; set; }
 }

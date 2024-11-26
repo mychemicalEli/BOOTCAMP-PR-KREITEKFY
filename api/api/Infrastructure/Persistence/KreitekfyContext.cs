@@ -27,6 +27,13 @@ public class KreitekfyContext : DbContext
             .WithMany()
             .HasForeignKey(i => i.ArtistId)
             .IsRequired();
+        
+        modelBuilder.Entity<Song>()
+            .HasOne(i => i.Album)
+            .WithMany()
+            .HasForeignKey(i => i.AlbumId)
+            .IsRequired()
+            .OnDelete(DeleteBehavior.Cascade);
 
         modelBuilder.Entity<Song>()
             .HasOne(i => i.Genre)
@@ -34,12 +41,7 @@ public class KreitekfyContext : DbContext
             .HasForeignKey(i => i.GenreId)
             .IsRequired();
 
-        modelBuilder.Entity<Song>()
-            .HasOne(i => i.Album)
-            .WithMany()
-            .HasForeignKey(i => i.AlbumId)
-            .IsRequired()
-            .OnDelete(DeleteBehavior.Cascade);
+       
 
 
         /*modelBuilder.Entity<UserSongs>()

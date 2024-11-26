@@ -5,8 +5,7 @@ using framework.Domain.Persistence;
 
 namespace api.Domain.Persistence;
 
-public interface ISongRepository: IGenericRepository<Song>
+public interface ISongRepository : IGenericRepository<Song>
 {
     PagedList<SongDto> GetSongsByCriteriaPaged(string? filter, PaginationParameters paginationParameters);
-    
 }

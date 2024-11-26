@@ -4,7 +4,7 @@ using framework.Domain.Persistence;
 
 namespace api.Domain.Persistence;
 
-public interface IUserRepository:IGenericRepository<User>
+public interface IUserRepository : IGenericRepository<User>
 {
     List<UserDto> GetAllUsersWithRoleName();
 }

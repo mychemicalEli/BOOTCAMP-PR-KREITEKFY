@@ -1,11 +1,12 @@
 using api.Application.Dtos;
+using api.Application.Services.Interfaces;
 using api.Domain.Entities;
 using api.Domain.Persistence;
 using AutoMapper;
 using framework.Application;
 using framework.Application.Services;
 
-namespace api.Application.Services;
+namespace api.Application.Services.Implementations;
 
 public class SongService : GenericService<Song, SongDto>, ISongService
 {

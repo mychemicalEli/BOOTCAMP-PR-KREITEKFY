@@ -4,11 +4,10 @@ using AutoMapper;
 
 namespace api.Application.Mappers;
 
-public class GenreMapperProfile:Profile
+public class GenreMapperProfile : Profile
 {
     public GenreMapperProfile()
     {
         CreateMap<Genre, GenreDto>().ReverseMap();
     }
-    
 }

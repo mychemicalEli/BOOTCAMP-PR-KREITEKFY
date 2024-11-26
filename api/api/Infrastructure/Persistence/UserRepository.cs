@@ -7,14 +7,15 @@ using Microsoft.EntityFrameworkCore;
 
 namespace api.Infrastructure.Persistence;
 
-public class UserRepository: GenericRepository<User>, IUserRepository
+public class UserRepository : GenericRepository<User>, IUserRepository
 {
     private KreitekfyContext _context;
+
     public UserRepository(KreitekfyContext context) : base(context)
     {
         _context = context;
     }
-    
+
     public List<UserDto> GetAllUsersWithRoleName()
     {
         return _context.Users
@@ -26,12 +27,12 @@ public class UserRepository: GenericRepository<User>, IUserRepository
                 Email = u.Email,
                 Password = u.Password,
                 RoleId = u.RoleId,
-                RoleName = u.Role.Name 
+                RoleName = u.Role.Name
             })
             .ToList();
     }
 
-    
+
     public override User GetById(long id)
     {
         var user = _context.Users.Include(i => i.Role).SingleOrDefault(i => i.Id == id);
@@ -39,9 +40,10 @@ public class UserRepository: GenericRepository<User>, IUserRepository
         {
             throw new ElementNotFoundException();
         }
+
         return user;
     }
-    
+
     public override User Insert(User user)
     {
         _context.Users.Add(user);
@@ -57,5 +59,4 @@ public class UserRepository: GenericRepository<User>, IUserRepository
         _context.Entry(user).Reference(i => i.Role).Load();
         return user;
     }
-    
 }

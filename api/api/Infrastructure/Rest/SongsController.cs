@@ -1,5 +1,5 @@
 using api.Application.Dtos;
-using api.Application.Services;
+using api.Application.Services.Interfaces;
 using framework.Application;
 using framework.Infrastructure.Rest;
 using Microsoft.AspNetCore.Mvc;
@@ -46,5 +46,4 @@ public class SongsController : GenericCrudController<SongDto>
             return BadRequest();
         }
     }
-    
 }

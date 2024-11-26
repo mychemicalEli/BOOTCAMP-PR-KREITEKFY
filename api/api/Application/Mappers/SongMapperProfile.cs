@@ -10,9 +10,9 @@ public class SongMapperProfile : Profile
     {
         CreateMap<Song, SongDto>()
             .ForMember(dest => dest.GenreName, opt => opt.MapFrom(src => src.Genre.Name))
-            .ForMember(dest => dest.AlbumName, opt => opt.MapFrom(src => src.Album.Title))  
-            .ForMember(dest => dest.AlbumCover, opt => opt.MapFrom(src => Convert.ToBase64String(src.Album.Cover))) 
-            .ForMember(dest => dest.ArtistName, opt => opt.MapFrom(src => src.Album.Artist.Name))  
+            .ForMember(dest => dest.AlbumName, opt => opt.MapFrom(src => src.Album.Title))
+            .ForMember(dest => dest.AlbumCover, opt => opt.MapFrom(src => Convert.ToBase64String(src.Album.Cover)))
+            .ForMember(dest => dest.ArtistName, opt => opt.MapFrom(src => src.Album.Artist.Name))
             .ForMember(dest => dest.Duration,
                 opt => opt.MapFrom(src => TimeSpanConverter.ToString(src.Duration)));
 

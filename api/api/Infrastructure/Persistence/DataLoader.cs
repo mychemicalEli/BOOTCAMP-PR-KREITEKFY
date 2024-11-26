@@ -94,12 +94,30 @@ public class DataLoader
     {
         var loaders = new Action[]
         {
-            () => { if (!_kreitekfyContext.Roles.Any()) LoadRoles(); },
-            () => { if (!_kreitekfyContext.Users.Any()) LoadUsers(); },
-            () => { if (!_kreitekfyContext.Genres.Any()) LoadGenres(); },
-            () => { if (!_kreitekfyContext.Artists.Any()) LoadArtists(); },
-            () => { if (!_kreitekfyContext.Albums.Any()) LoadAlbums(); },
-            () => { if (!_kreitekfyContext.Songs.Any()) LoadSongs(); }
+            () =>
+            {
+                if (!_kreitekfyContext.Roles.Any()) LoadRoles();
+            },
+            () =>
+            {
+                if (!_kreitekfyContext.Users.Any()) LoadUsers();
+            },
+            () =>
+            {
+                if (!_kreitekfyContext.Genres.Any()) LoadGenres();
+            },
+            () =>
+            {
+                if (!_kreitekfyContext.Artists.Any()) LoadArtists();
+            },
+            () =>
+            {
+                if (!_kreitekfyContext.Albums.Any()) LoadAlbums();
+            },
+            () =>
+            {
+                if (!_kreitekfyContext.Songs.Any()) LoadSongs();
+            }
         };
 
         foreach (var load in loaders)
@@ -203,7 +221,10 @@ public class DataLoader
             new Album { Title = "Dookie", ArtistId = 7, Cover = dookieCover },
             new Album { Title = "21st Century Breakdown", ArtistId = 7, Cover = twentyFirstCover },
             new Album { Title = "The Black Parade", ArtistId = 8, Cover = blackParadeCover },
-            new Album { Title = "Danger Days: The True Lives of the Fabulous Killjoys", ArtistId = 8, Cover = dangerDaysCover },
+            new Album
+            {
+                Title = "Danger Days: The True Lives of the Fabulous Killjoys", ArtistId = 8, Cover = dangerDaysCover
+            },
             new Album { Title = "Il Ballo Della Vita", ArtistId = 9, Cover = balloVitaCover },
             new Album { Title = "Rush!", ArtistId = 9, Cover = rushCover },
             new Album { Title = "Born With a Broken Heart", ArtistId = 10, Cover = brokenHeartCover },
@@ -416,7 +437,7 @@ public class DataLoader
                 GenreId = 3, Duration = new TimeSpan(0, 3, 30), Rating = 4m, Streams = 95,
                 AddedAt = DateTime.UtcNow
             },
-           
+
 
             //Pop
 
