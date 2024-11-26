@@ -5,8 +5,8 @@ using api.Domain.Persistence;
 using framework.Application;
 using framework.Infrastructure.Persistence;
 using framework.Infrastructure.Specs;
-using System.Linq;
-using api.Domain.Enums;
+using framework.Domain.Persistence;
+using Microsoft.EntityFrameworkCore;
 
 namespace api.Infrastructure.Persistence
 {
@@ -21,11 +21,29 @@ namespace api.Infrastructure.Persistence
             _specificationParser = specificationParser;
         }
 
+        public override Song GetById(long id)
+        {
+            var song = _context.Songs
+                .Include(i => i.Album)
+                .ThenInclude(a => a.Artist)
+                .Include(i => i.Genre)
+                .SingleOrDefault(i => i.Id == id);
+            if (song == null)
+            {
+                throw new ElementNotFoundException();
+            }
+
+            return song;
+        }
+
         public PagedList<SongDto> GetSongsByCriteriaPaged(string? filter, PaginationParameters paginationParameters)
         {
             var songs = _context.Songs.AsQueryable();
-
-            songs = SongFilters.ApplyFilter(songs, filter, _specificationParser);
+            if (!string.IsNullOrEmpty(filter))
+            {
+                Specification<Song> specification = _specificationParser.ParseSpecification(filter);
+                songs = specification.ApplySpecification(songs);
+            }
 
             if (!string.IsNullOrEmpty(paginationParameters.Sort))
             {
@@ -36,10 +54,12 @@ namespace api.Infrastructure.Persistence
             {
                 Id = i.Id,
                 Title = i.Title,
-                Album = i.Album,
-                Artist = i.Artist,
-                AlbumCover = i.AlbumCover,
-                Genre = i.Genre,
+                AlbumId = i.AlbumId,
+                AlbumName = i.Album.Title,
+                AlbumCover = Convert.ToBase64String(i.Album.Cover),
+                ArtistName = i.Album.Artist.Name,
+                GenreId = i.GenreId,
+                GenreName = i.Genre.Name,
                 Duration = TimeSpanConverter.ToString(i.Duration),
                 Streams = i.Streams,
                 Rating = i.Rating,
@@ -51,52 +71,24 @@ namespace api.Infrastructure.Persistence
         }
 
 
-        public IEnumerable<SongDto> GetLatestSongs(int count = 5, Genres? genre = null)
+        public override Song Insert(Song song)
         {
-            var songs = _context.Songs
-                .Where(song => !genre.HasValue || song.Genre == genre)
-                .OrderByDescending(song => song.AddedAt) 
-                .Take(count) 
-                .Select(i => new SongDto
-                {
-                    Id = i.Id,
-                    Title = i.Title,
-                    Album = i.Album,
-                    Artist = i.Artist,
-                    AlbumCover = i.AlbumCover,
-                    Genre = i.Genre,
-                    Duration = TimeSpanConverter.ToString(i.Duration),
-                    Streams = i.Streams,
-                    Rating = i.Rating,
-                    AddedAt = i.AddedAt
-                });
-
-            return songs;
-        }
-        
-        
-        public IEnumerable<SongDto> GetMostPlayedSongs(int count = 5, Genres? genre = null)
-        {
-            var songs = _context.Songs
-                .Where(song => !genre.HasValue || song.Genre == genre)
-                .OrderByDescending(song => song.Streams) 
-                .Take(count) 
-                .Select(i => new SongDto
-                {
-                    Id = i.Id,
-                    Title = i.Title,
-                    Album = i.Album,
-                    Artist = i.Artist,
-                    AlbumCover = i.AlbumCover,
-                    Genre = i.Genre,
-                    Duration = TimeSpanConverter.ToString(i.Duration),
-                    Streams = i.Streams,
-                    Rating = i.Rating,
-                    AddedAt = i.AddedAt
-                });
-
-            return songs;
+            _context.Songs.Add(song);
+            _context.SaveChanges();
+            _context.Entry(song).Reference(i => i.Genre).Load();
+            _context.Entry(song).Reference(i => i.Album).Load();
+            _context.Entry(song.Album).Reference(a => a.Artist).Load();
+            return song;
         }
 
+        public override Song Update(Song song)
+        {
+            _context.Songs.Update(song);
+            _context.SaveChanges();
+            _context.Entry(song).Reference(i => i.Genre).Load();
+            _context.Entry(song).Reference(i => i.Album).Load();
+            _context.Entry(song.Album).Reference(a => a.Artist).Load();
+            return song;
+        }
     }
 }

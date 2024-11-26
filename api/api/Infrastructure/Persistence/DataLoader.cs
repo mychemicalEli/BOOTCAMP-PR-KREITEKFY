@@ -1,5 +1,4 @@
 using api.Domain.Entities;
-using api.Domain.Enums;
 
 namespace api.Infrastructure.Persistence;
 
@@ -83,7 +82,7 @@ public class DataLoader
 
     private readonly byte[] cowboysCover = Convert.FromBase64String(
         "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");
-    
+
     #endregion
 
     public DataLoader(KreitekfyContext kreitekfyContext)
@@ -93,19 +92,35 @@ public class DataLoader
 
     public void LoadData()
     {
-        if (!_kreitekfyContext.Users.Any())
+        var loaders = new Action[]
         {
-            LoadUsers();
+            () => { if (!_kreitekfyContext.Roles.Any()) LoadRoles(); },
+            () => { if (!_kreitekfyContext.Users.Any()) LoadUsers(); },
+            () => { if (!_kreitekfyContext.Genres.Any()) LoadGenres(); },
+            () => { if (!_kreitekfyContext.Artists.Any()) LoadArtists(); },
+            () => { if (!_kreitekfyContext.Albums.Any()) LoadAlbums(); },
+            () => { if (!_kreitekfyContext.Songs.Any()) LoadSongs(); }
+        };
+
+        foreach (var load in loaders)
+        {
+            load();
         }
 
         _kreitekfyContext.SaveChanges();
+    }
 
-        if (!_kreitekfyContext.Songs.Any())
+    public void LoadRoles()
+    {
+        var roles = new Role[]
         {
-            LoadSongs();
+            new Role { Name = "Admin" },
+            new Role { Name = "User" }
+        };
+        foreach (Role role in roles)
+        {
+            _kreitekfyContext.Add(role);
         }
-
-        _kreitekfyContext.SaveChanges();
     }
 
     public void LoadUsers()
@@ -115,17 +130,93 @@ public class DataLoader
             new User
             {
                 Name = "Elizabeth", LastName = "Blanco", Email = "elizabeth.blanco@example.com",
-                Password = "SecurePass123", Role = Roles.Admin
+                Password = "SecurePass123", RoleId = 1
             },
             new User
             {
                 Name = "Ángel", LastName = "Hernández", Email = "angel.hernandez@example.com",
-                Password = "SecurePass123", Role = Roles.User
+                Password = "SecurePass123", RoleId = 2
             }
         };
         foreach (User user in users)
         {
             _kreitekfyContext.Users.Add(user);
+        }
+    }
+
+    public void LoadGenres()
+    {
+        var genres = new Genre[]
+        {
+            new Genre { Name = "Metal" },
+            new Genre { Name = "PopPunk" },
+            new Genre { Name = "Rock" },
+            new Genre { Name = "Pop" }
+        };
+        foreach (Genre genre in genres)
+        {
+            _kreitekfyContext.Genres.Add(genre);
+        }
+    }
+
+    public void LoadArtists()
+    {
+        var artists = new Artist[]
+        {
+            new Artist { Name = "Avenged Sevenfold" },
+            new Artist { Name = "Falling in Reverse" },
+            new Artist { Name = "Linkin Park" },
+            new Artist { Name = "Machine Gun Kelly" },
+            new Artist { Name = "Blink 182" },
+            new Artist { Name = "All Time Low" },
+            new Artist { Name = "Green Day" },
+            new Artist { Name = "My Chemical Romance" },
+            new Artist { Name = "Måneskin" },
+            new Artist { Name = "Damiano David" },
+            new Artist { Name = "Harry Styles" },
+            new Artist { Name = "One Direction" },
+            new Artist { Name = "Lala Love You" },
+            new Artist { Name = "Arde Bogotá" },
+        };
+        foreach (Artist artist in artists)
+        {
+            _kreitekfyContext.Add(artist);
+        }
+    }
+
+    public void LoadAlbums()
+    {
+        var albums = new Album[]
+        {
+            new Album { Title = "Nightmare", ArtistId = 1, Cover = nightmareCover },
+            new Album { Title = "City of Evil", ArtistId = 1, Cover = cityOfEvilCover },
+            new Album { Title = "Popular Monster", ArtistId = 2, Cover = popularMonsterCover },
+            new Album { Title = "The Drug in Me is You", ArtistId = 2, Cover = drugInMeCover },
+            new Album { Title = "Hybrid Theory", ArtistId = 3, Cover = hybridTheoryCover },
+            new Album { Title = "Meteora", ArtistId = 3, Cover = meteoraCover },
+            new Album { Title = "Hotel Diablo", ArtistId = 4, Cover = hotelDiabloCover },
+            new Album { Title = "Tickets to My Downfall", ArtistId = 4, Cover = ticketsCover },
+            new Album { Title = "Enema of the State", ArtistId = 5, Cover = enemaStateCover },
+            new Album { Title = "Dude Ranch", ArtistId = 5, Cover = dudeRanchCover },
+            new Album { Title = "Nothing Personal", ArtistId = 6, Cover = nothingPersonalCover },
+            new Album { Title = "So Wrong It's Right", ArtistId = 6, Cover = soWrongCover },
+            new Album { Title = "Dookie", ArtistId = 7, Cover = dookieCover },
+            new Album { Title = "21st Century Breakdown", ArtistId = 7, Cover = twentyFirstCover },
+            new Album { Title = "The Black Parade", ArtistId = 8, Cover = blackParadeCover },
+            new Album { Title = "Danger Days: The True Lives of the Fabulous Killjoys", ArtistId = 8, Cover = dangerDaysCover },
+            new Album { Title = "Il Ballo Della Vita", ArtistId = 9, Cover = balloVitaCover },
+            new Album { Title = "Rush!", ArtistId = 9, Cover = rushCover },
+            new Album { Title = "Born With a Broken Heart", ArtistId = 10, Cover = brokenHeartCover },
+            new Album { Title = "Silverlines", ArtistId = 10, Cover = silverlinesCover },
+            new Album { Title = "Fine Line", ArtistId = 11, Cover = fineLineCover },
+            new Album { Title = "Harry Styles", ArtistId = 11, Cover = harryStylesCover },
+            new Album { Title = "Midnight Memories", ArtistId = 12, Cover = midnightMemoriesCover },
+            new Album { Title = "Fin del Mundo", ArtistId = 13, Cover = finDelMundoCover },
+            new Album { Title = "COWBOYS DE LA A3", ArtistId = 14, Cover = cowboysCover },
+        };
+        foreach (Album album in albums)
+        {
+            _kreitekfyContext.Add(album);
         }
     }
 
@@ -136,68 +227,64 @@ public class DataLoader
             //Metal
             new Song
             {
-                Title = "So Far Away", Artist = "Avenged Sevenfold", Album = "Nightmare", AlbumCover = nightmareCover,
-                Genre = Genres.Metal, Duration = new TimeSpan(0, 5, 12), Rating = 4.2m, Streams = 100,
+                Title = "So Far Away", AlbumId = 1,
+                GenreId = 1, Duration = new TimeSpan(0, 5, 12), Rating = 4.2m, Streams = 100,
+                AddedAt = DateTime.UtcNow
+            },
+            new Song
+            {
+                Title = "Nightmare", AlbumId = 1,
+                GenreId = 1, Duration = new TimeSpan(0, 6, 16), Rating = 4m, Streams = 72,
                 AddedAt = DateTime.UtcNow
             },
 
             new Song
             {
-                Title = "Bat Country", Artist = "Avenged Sevenfold", Album = "City of Evil",
-                AlbumCover = cityOfEvilCover,
-                Genre = Genres.Metal, Duration = new TimeSpan(0, 5, 14), Rating = 3.6m, Streams = 80,
+                Title = "Bat Country", AlbumId = 2,
+                GenreId = 1, Duration = new TimeSpan(0, 5, 14), Rating = 3.6m, Streams = 80,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "Beast and the Harlot", Artist = "Avenged Sevenfold", Album = "City of Evil",
-                AlbumCover = cityOfEvilCover,
-                Genre = Genres.Metal, Duration = new TimeSpan(0, 5, 41), Rating = 3.9m, Streams = 50,
+                Title = "Beast and the Harlot", AlbumId = 2,
+                GenreId = 1, Duration = new TimeSpan(0, 5, 41), Rating = 3.9m, Streams = 50,
+                AddedAt = DateTime.UtcNow
+            },
+
+            new Song
+            {
+                Title = "Popular Monster", AlbumId = 3,
+                GenreId = 1, Duration = new TimeSpan(0, 3, 30), Rating = 2.8m, Streams = 35,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "Nightmare", Artist = "Avenged Sevenfold", Album = "Nightmare", AlbumCover = nightmareCover,
-                Genre = Genres.Metal, Duration = new TimeSpan(0, 6, 16), Rating = 4m, Streams = 72,
+                Title = "The Drug in Me is You", AlbumId = 4,
+                GenreId = 1, Duration = new TimeSpan(0, 4, 00), Rating = 3.2m, Streams = 40,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "Popular Monster", Artist = "Falling in Reverse", Album = "Popular Monster",
-                AlbumCover = popularMonsterCover,
-                Genre = Genres.Metal, Duration = new TimeSpan(0, 3, 30), Rating = 2.8m, Streams = 35,
+                Title = "I'm not a Vampire", AlbumId = 4,
+                GenreId = 1, Duration = new TimeSpan(0, 4, 02), Rating = 4m, Streams = 32,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "The Drug in Me is You", Artist = "Falling in Reverse", Album = "The Drug in Me is You",
-                AlbumCover = drugInMeCover,
-                Genre = Genres.Metal, Duration = new TimeSpan(0, 4, 00), Rating = 3.2m, Streams = 40,
+                Title = "In the End", AlbumId = 5,
+                GenreId = 1, Duration = new TimeSpan(0, 3, 36), Rating = 4m, Streams = 10,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "I'm not a Vampire", Artist = "Falling in Reverse", Album = "The Drug in Me is You",
-                AlbumCover = drugInMeCover,
-                Genre = Genres.Metal, Duration = new TimeSpan(0, 4, 02), Rating = 4m, Streams = 32,
+                Title = "Crawling", AlbumId = 6,
+                GenreId = 1, Duration = new TimeSpan(0, 3, 29), Rating = 2.4m, Streams = 90,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "In the End", Artist = "Linkin Park", Album = "Hybrid Theory", AlbumCover = hybridTheoryCover,
-                Genre = Genres.Metal, Duration = new TimeSpan(0, 3, 36), Rating = 4m, Streams = 10,
-                AddedAt = DateTime.UtcNow
-            },
-            new Song
-            {
-                Title = "Crawling", Artist = "Linkin Park", Album = "Hybrid Theory", AlbumCover = hybridTheoryCover,
-                Genre = Genres.Metal, Duration = new TimeSpan(0, 3, 29), Rating = 2.4m, Streams = 90,
-                AddedAt = DateTime.UtcNow
-            },
-            new Song
-            {
-                Title = "Numb", Artist = "Linkin Park", Album = "Meteora", AlbumCover = hybridTheoryCover,
-                Genre = Genres.Metal, Duration = new TimeSpan(0, 3, 06), Rating = 3.3m, Streams = 95,
+                Title = "Numb", AlbumId = 6,
+                GenreId = 1, Duration = new TimeSpan(0, 3, 06), Rating = 3.3m, Streams = 95,
                 AddedAt = DateTime.UtcNow
             },
 
@@ -205,73 +292,64 @@ public class DataLoader
 
             new Song
             {
-                Title = "I Think I'm OKAY", Artist = "Machine Gun Kelly", Album = "Hotel Diablo",
-                AlbumCover = hotelDiabloCover,
-                Genre = Genres.PopPunk, Duration = new TimeSpan(0, 2, 49), Rating = 4m, Streams = 55,
+                Title = "I Think I'm OKAY", AlbumId = 7,
+                GenreId = 2, Duration = new TimeSpan(0, 2, 49), Rating = 4m, Streams = 55,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "Bloody Valentine", Artist = "Machine Gun Kelly", Album = "Tickets to My Downfall",
-                AlbumCover = ticketsCover,
-                Genre = Genres.PopPunk, Duration = new TimeSpan(0, 2, 40), Rating = 3.6m, Streams = 80,
-                AddedAt = DateTime.UtcNow
-            },
-
-            new Song
-            {
-                Title = "My Ex's Best Friend", Artist = "Machine Gun Kelly", Album = "Tickets to My Downfall",
-                AlbumCover = ticketsCover,
-                Genre = Genres.PopPunk, Duration = new TimeSpan(0, 2, 45), Rating = 4m, Streams = 70,
-                AddedAt = DateTime.UtcNow
-            },
-            new Song
-            {
-                Title = "Love Race", Artist = "Machine Gun Kelly feat. Kells", Album = "Tickets to My Downfall",
-                AlbumCover = ticketsCover,
-                Genre = Genres.PopPunk, Duration = new TimeSpan(0, 2, 58), Rating = 2.6m, Streams = 60,
+                Title = "Bloody Valentine", AlbumId = 8,
+                GenreId = 2, Duration = new TimeSpan(0, 2, 40), Rating = 3.6m, Streams = 80,
                 AddedAt = DateTime.UtcNow
             },
 
             new Song
             {
-                Title = "All the Small Things", Artist = "Blink 182", Album = "Enema of the State",
-                AlbumCover = enemaStateCover,
-                Genre = Genres.PopPunk, Duration = new TimeSpan(0, 2, 51), Rating = 2.9m, Streams = 95,
+                Title = "My Ex's Best Friend", AlbumId = 8,
+                GenreId = 2, Duration = new TimeSpan(0, 2, 45), Rating = 4m, Streams = 70,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "What's My Age Again?", Artist = "Blink 182", Album = "Enema of the State",
-                AlbumCover = enemaStateCover,
-                Genre = Genres.PopPunk, Duration = new TimeSpan(0, 2, 23), Rating = 3.9m, Streams = 90,
+                Title = "Concert for Aliens", AlbumId = 8,
+                GenreId = 2, Duration = new TimeSpan(0, 2, 58), Rating = 2.6m, Streams = 60,
+                AddedAt = DateTime.UtcNow
+            },
+
+            new Song
+            {
+                Title = "All the Small Things", AlbumId = 9,
+                GenreId = 2, Duration = new TimeSpan(0, 2, 51), Rating = 2.9m, Streams = 95,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "Dammit", Artist = "Blink 182", Album = "Dude Ranch", AlbumCover = dudeRanchCover,
-                Genre = Genres.PopPunk, Duration = new TimeSpan(0, 2, 45), Rating = 4m, Streams = 75,
+                Title = "What's My Age Again?", AlbumId = 9,
+                GenreId = 2, Duration = new TimeSpan(0, 2, 23), Rating = 3.9m, Streams = 90,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "Weightless", Artist = "All Time Low", Album = "Nothing Personal",
-                AlbumCover = nothingPersonalCover,
-                Genre = Genres.PopPunk, Duration = new TimeSpan(0, 3, 01), Rating = 2.7m, Streams = 72,
+                Title = "Dammit", AlbumId = 10,
+                GenreId = 2, Duration = new TimeSpan(0, 2, 45), Rating = 4m, Streams = 75,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "Dear Maria, Count Me In", Artist = "All Time Low", Album = "So Wrong, It's Right",
-                AlbumCover = soWrongCover,
-                Genre = Genres.PopPunk, Duration = new TimeSpan(0, 3, 03), Rating = 2.9m, Streams = 82,
+                Title = "Weightless", AlbumId = 11,
+                GenreId = 2, Duration = new TimeSpan(0, 3, 01), Rating = 2.7m, Streams = 72,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "Poppin' Champagne", Artist = "All Time Low", Album = "So Wrong, It's Right",
-                AlbumCover = soWrongCover,
-                Genre = Genres.PopPunk, Duration = new TimeSpan(0, 3, 25), Rating = 4m, Streams = 69,
+                Title = "Dear Maria, Count Me In", AlbumId = 12,
+                GenreId = 2, Duration = new TimeSpan(0, 3, 03), Rating = 2.9m, Streams = 82,
+                AddedAt = DateTime.UtcNow
+            },
+            new Song
+            {
+                Title = "Poppin' Champagne", AlbumId = 12,
+                GenreId = 2, Duration = new TimeSpan(0, 3, 25), Rating = 4m, Streams = 69,
                 AddedAt = DateTime.UtcNow
             },
 
@@ -279,139 +357,123 @@ public class DataLoader
 
             new Song
             {
-                Title = "Basket Case", Artist = "Green Day", Album = "Dookie", AlbumCover = dookieCover,
-                Genre = Genres.Rock, Duration = new TimeSpan(0, 3, 03), Rating = 3m, Streams = 10,
+                Title = "Basket Case", AlbumId = 13,
+                GenreId = 3, Duration = new TimeSpan(0, 3, 03), Rating = 3m, Streams = 10,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "Basket Case", Artist = "Green Day", Album = "Dookie", AlbumCover = dookieCover,
-                Genre = Genres.Rock, Duration = new TimeSpan(0, 3, 03), Rating = 4m, Streams = 100,
+                Title = "Basket Case", AlbumId = 13,
+                GenreId = 3, Duration = new TimeSpan(0, 3, 03), Rating = 4m, Streams = 100,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "Know Your Enemy", Artist = "Green Day", Album = "21st Century Breakdown",
-                AlbumCover = twentyFirstCover,
-                Genre = Genres.Rock, Duration = new TimeSpan(0, 3, 12), Rating = 3.2m, Streams = 90,
+                Title = "Know Your Enemy", AlbumId = 14,
+                GenreId = 3, Duration = new TimeSpan(0, 3, 12), Rating = 3.2m, Streams = 90,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "Helena", Artist = "My Chemical Romance", Album = "The Black Parade",
-                AlbumCover = blackParadeCover,
-                Genre = Genres.Rock, Duration = new TimeSpan(0, 3, 22), Rating = 4m, Streams = 11,
+                Title = "Helena", AlbumId = 15,
+                GenreId = 3, Duration = new TimeSpan(0, 3, 22), Rating = 4m, Streams = 11,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "Welcome to the Black Parade", Artist = "My Chemical Romance", Album = "The Black Parade",
-                AlbumCover = blackParadeCover,
-                Genre = Genres.Rock, Duration = new TimeSpan(0, 5, 11), Rating = 4m, Streams = 13,
+                Title = "Welcome to the Black Parade", AlbumId = 15,
+                GenreId = 3, Duration = new TimeSpan(0, 5, 11), Rating = 4m, Streams = 13,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "SING", Artist = "My Chemical Romance",
-                Album = "Danger Days: The True Lives of the Fabulous Killjoys", AlbumCover = dangerDaysCover,
-                Genre = Genres.Rock, Duration = new TimeSpan(0, 3, 10), Rating = 3.8m, Streams = 80,
+                Title = "SING", AlbumId = 16,
+                GenreId = 3, Duration = new TimeSpan(0, 3, 10), Rating = 3.8m, Streams = 80,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "Na Na Na (Na Na Na Na Na Na Na Na Na)", Artist = "My Chemical Romance",
-                Album = "Danger Days: The True Lives of the Fabulous Killjoys", AlbumCover = dangerDaysCover,
-                Genre = Genres.Rock, Duration = new TimeSpan(0, 4, 06), Rating = 3.3m, Streams = 105,
+                Title = "Na Na Na (Na Na Na Na Na Na Na Na Na)", AlbumId = 16,
+                GenreId = 3, Duration = new TimeSpan(0, 4, 06), Rating = 3.3m, Streams = 105,
                 AddedAt = DateTime.UtcNow
             },
 
             new Song
             {
-                Title = "Torna A Casa", Artist = "Måneskin", Album = "Il Ballo Della Vita", AlbumCover = balloVitaCover,
-                Genre = Genres.Rock, Duration = new TimeSpan(0, 4, 25), Rating = 2.2m, Streams = 85,
+                Title = "Torna A Casa", AlbumId = 17,
+                GenreId = 3, Duration = new TimeSpan(0, 4, 25), Rating = 2.2m, Streams = 85,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "Mamma Mia", Artist = "Måneskin", Album = "Il Ballo Della Vita", AlbumCover = rushCover,
-                Genre = Genres.Rock, Duration = new TimeSpan(0, 3, 30), Rating = 4m, Streams = 95,
+                Title = "Zitti E Buoni", AlbumId = 17,
+                GenreId = 3, Duration = new TimeSpan(0, 3, 28), Rating = 4m, Streams = 15,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "Zitti E Buoni", Artist = "Måneskin", Album = "Rush!", AlbumCover = balloVitaCover,
-                Genre = Genres.Rock, Duration = new TimeSpan(0, 3, 28), Rating = 4m, Streams = 15,
+                Title = "Mamma Mia", AlbumId = 18,
+                GenreId = 3, Duration = new TimeSpan(0, 3, 30), Rating = 4m, Streams = 95,
                 AddedAt = DateTime.UtcNow
             },
+           
 
             //Pop
 
             new Song
             {
-                Title = "Born With a Broken Heart", Artist = "Damiano David", Album = "Single",
-                AlbumCover = brokenHeartCover,
-                Genre = Genres.Pop, Duration = new TimeSpan(0, 3, 15), Rating = 4m, Streams = 50,
+                Title = "Born With a Broken Heart", AlbumId = 19,
+                GenreId = 4, Duration = new TimeSpan(0, 3, 15), Rating = 4m, Streams = 50,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "Silverlines", Artist = "Damiano David", Album = "Single", AlbumCover = silverlinesCover,
-                Genre = Genres.Pop, Duration = new TimeSpan(0, 3, 04), Rating = 4m, Streams = 42,
+                Title = "Silverlines", AlbumId = 20,
+                GenreId = 4, Duration = new TimeSpan(0, 3, 04), Rating = 4m, Streams = 42,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "Watermelon Sugar", Artist = "Harry Styles", Album = "Fine Line", AlbumCover = fineLineCover,
-                Genre = Genres.Pop, Duration = new TimeSpan(0, 2, 54), Rating = 3.9m, Streams = 75,
+                Title = "Watermelon Sugar", AlbumId = 21,
+                GenreId = 4, Duration = new TimeSpan(0, 2, 54), Rating = 3.9m, Streams = 75,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "Adore You", Artist = "Harry Styles", Album = "Fine Line", AlbumCover = fineLineCover,
-                Genre = Genres.Pop, Duration = new TimeSpan(0, 3, 27), Rating = 2.3m, Streams = 55,
+                Title = "Adore You", AlbumId = 21,
+                GenreId = 4, Duration = new TimeSpan(0, 3, 27), Rating = 2.3m, Streams = 55,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "Sign of the Times", Artist = "Harry Styles", Album = "Harry Styles",
-                AlbumCover = harryStylesCover,
-                Genre = Genres.Pop, Duration = new TimeSpan(0, 4, 00), Rating = 2.8m, Streams = 70,
+                Title = "Sign of the Times", AlbumId = 22,
+                GenreId = 4, Duration = new TimeSpan(0, 4, 00), Rating = 2.8m, Streams = 70,
                 AddedAt = DateTime.UtcNow
             },
 
             new Song
             {
-                Title = "Story of My Life", Artist = "One Direction", Album = "Midnight Memories",
-                AlbumCover = midnightMemoriesCover,
-                Genre = Genres.Pop, Duration = new TimeSpan(0, 4, 05), Rating = 4m, Streams = 65,
+                Title = "Story of My Life", AlbumId = 23,
+                GenreId = 4, Duration = new TimeSpan(0, 4, 05), Rating = 4m, Streams = 65,
+                AddedAt = DateTime.UtcNow
+            },
+
+            new Song
+            {
+                Title = "Quédate Conmigo", AlbumId = 24,
+                GenreId = 4, Duration = new TimeSpan(0, 3, 30), Rating = 2.3m, Streams = 30,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "Little Things", Artist = "One Direction", Album = "Midnight Memories",
-                AlbumCover = midnightMemoriesCover,
-                Genre = Genres.Pop, Duration = new TimeSpan(0, 3, 39), Rating = 3.6m, Streams = 45,
+                Title = "Fin del Mundo", AlbumId = 24,
+                GenreId = 4, Duration = new TimeSpan(0, 3, 12), Rating = 3m, Streams = 35,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "Quédate Conmigo", Artist = "Lala Love You", Album = "Fin del Mundo",
-                AlbumCover = finDelMundoCover,
-                Genre = Genres.Pop, Duration = new TimeSpan(0, 3, 30), Rating = 2.3m, Streams = 30,
-                AddedAt = DateTime.UtcNow
-            },
-            new Song
-            {
-                Title = "Fin del Mundo", Artist = "Lala Love You", Album = "Fin del Mundo",
-                AlbumCover = finDelMundoCover,
-                Genre = Genres.Pop, Duration = new TimeSpan(0, 3, 12), Rating = 3m, Streams = 35,
-                AddedAt = DateTime.UtcNow
-            },
-            new Song
-            {
-                Title = "Cowboys de la A3", Artist = "Arde Bogotá", Album = "COWBOYS DE LA A3",
-                AlbumCover = cowboysCover,
-                Genre = Genres.Pop, Duration = new TimeSpan(0, 3, 45), Rating = 2.8m, Streams = 25,
+                Title = "Cowboys de la A3", AlbumId = 25,
+                GenreId = 4, Duration = new TimeSpan(0, 3, 45), Rating = 2.8m, Streams = 25,
                 AddedAt = DateTime.UtcNow
             }
         };

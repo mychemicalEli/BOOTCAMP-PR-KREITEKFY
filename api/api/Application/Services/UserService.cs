@@ -8,7 +8,14 @@ namespace api.Application.Services;
 
 public class UserService : GenericService<User, UserDto>, IUserService
 {
+    private readonly IUserRepository _repository;
     public UserService(IUserRepository repository, IMapper mapper) : base(repository, mapper)
     {
+        _repository = repository;
+    }
+
+    public List<UserDto> GetAllUsersWithRoleName()
+    {
+        return _repository.GetAllUsersWithRoleName();
     }
 }

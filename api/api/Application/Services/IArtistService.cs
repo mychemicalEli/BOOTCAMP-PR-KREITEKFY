@@ -3,7 +3,6 @@ using framework.Application.Services;
 
 namespace api.Application.Services;
 
-public interface IUserService:IGenericService<UserDto>
+public interface IArtistService : IGenericService<ArtistDto>
 {
-    List<UserDto> GetAllUsersWithRoleName();
 }

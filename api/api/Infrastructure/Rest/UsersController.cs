@@ -10,7 +10,22 @@ namespace api.Infrastructure.Rest;
 [ApiController]
 public class UsersController:GenericCrudController<UserDto>
 {
+    private IUserService _service;
     public UsersController(IUserService service) : base(service)
     {
+        _service = service;
+    }
+    
+    [NonAction]
+    public override ActionResult<IEnumerable<UserDto>> GetAll()
+    {
+        throw new NotImplementedException();
+    }
+
+    [HttpGet]
+    [Produces("application/json")]
+    public ActionResult<UserDto> GetAllUsersWithRoleName()
+    {
+        return Ok(_service.GetAllUsersWithRoleName());
     }
 }

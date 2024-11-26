@@ -1,4 +1,3 @@
-using System.Text.Json.Serialization;
 using api.Application.Mappers;
 using api.Application.Services;
 using api.Domain.Persistence;
@@ -10,19 +9,30 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<IUserService, UserService>();
-builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ISongService, SongService>();
+builder.Services.AddScoped<IGenreService, GenreService>();
+builder.Services.AddScoped<IRoleService, RoleService>();
+builder.Services.AddScoped<IArtistService, ArtistService>();
+builder.Services.AddScoped<IAlbumService, AlbumService>();
+
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IGenreRepository, GenreRepository>();
 builder.Services.AddScoped<ISongRepository, SongRepository>();
+builder.Services.AddScoped<IRoleRepository, RoleRepository>();
+builder.Services.AddScoped<IArtistRepository, ArtistRepository>();
+builder.Services.AddScoped<IAlbumRepository, AlbumRepository>();
+
 builder.Services.AddAutoMapper(typeof(UserMapperProfile));
 builder.Services.AddAutoMapper(typeof(SongMapperProfile));
+builder.Services.AddAutoMapper(typeof(GenreMapperProfile));
+builder.Services.AddAutoMapper(typeof(RoleMapperProfile));
+builder.Services.AddAutoMapper(typeof(ArtistMapperProfile));
+builder.Services.AddAutoMapper(typeof(AlbumMapperProfile));
+
 builder.Services.AddScoped(typeof(ISpecificationParser<>), typeof(SpecificationParser<>));
 builder.Services.AddScoped<IImageVerifier, ImageVerifier>();
 
-builder.Services.AddControllers()
-    .AddJsonOptions(options =>
-    {
-        options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
-    });
+builder.Services.AddControllers();
 
 builder.Services.AddLogging();
 builder.Services.AddRouting(options => options.LowercaseUrls = true);
