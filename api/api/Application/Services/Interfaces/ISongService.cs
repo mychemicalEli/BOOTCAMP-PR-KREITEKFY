@@ -1,11 +1,10 @@
 using api.Application.Dtos;
-using api.Domain.Entities;
 using framework.Application;
-using framework.Domain.Persistence;
+using framework.Application.Services;
 
-namespace api.Domain.Persistence;
+namespace api.Application.Services.Interfaces;
 
-public interface ISongRepository : IGenericRepository<Song>
+public interface ISongService : IGenericService<SongDto>
 {
     PagedList<SongDto> GetSongsByCriteriaPaged(string? filter, PaginationParameters paginationParameters);
 }

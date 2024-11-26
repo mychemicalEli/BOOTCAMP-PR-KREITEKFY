@@ -1,7 +1,5 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text.Json.Serialization;
-using api.Domain.Enums;
 
 namespace api.Domain.Entities;
 
@@ -30,8 +28,7 @@ public class User
     [MaxLength(100)]
     public string Password { get; set; }
 
-   
-    [Required]
-    public Roles Role { get; set; }
- 
+
+    [Required] public long RoleId { get; set; }
+    [Required] public Role Role { get; set; }
 }
