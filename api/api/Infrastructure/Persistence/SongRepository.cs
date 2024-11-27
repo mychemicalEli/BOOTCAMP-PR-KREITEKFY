@@ -63,7 +63,7 @@ namespace api.Infrastructure.Persistence
                 GenreName = i.Genre.Name,
                 Duration = TimeSpanConverter.ToString(i.Duration),
                 Streams = i.Streams,
-                Rating = i.Rating,
+                MediaRating = i.MediaRating,
                 AddedAt = i.AddedAt
             });
 
