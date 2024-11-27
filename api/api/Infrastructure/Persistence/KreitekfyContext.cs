@@ -21,8 +21,8 @@ public class KreitekfyContext : DbContext
             .WithMany()
             .HasForeignKey(i => i.RoleId)
             .IsRequired();
-
-        modelBuilder.Entity<Album>()
+        
+        modelBuilder.Entity<Song>()
             .HasOne(i => i.Artist)
             .WithMany()
             .HasForeignKey(i => i.ArtistId)
@@ -41,8 +41,7 @@ public class KreitekfyContext : DbContext
             .HasForeignKey(i => i.GenreId)
             .IsRequired();
 
-       
-
+        
 
         /*modelBuilder.Entity<UserSongs>()
             .HasOne<User>()

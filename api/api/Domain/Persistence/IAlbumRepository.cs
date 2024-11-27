@@ -6,5 +6,4 @@ namespace api.Domain.Persistence;
 
 public interface IAlbumRepository : IGenericRepository<Album>
 {
-    List<AlbumDto> GetAllAlbumsWithArtistName();
 }

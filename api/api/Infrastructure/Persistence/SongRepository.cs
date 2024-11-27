@@ -25,7 +25,7 @@ namespace api.Infrastructure.Persistence
         {
             var song = _context.Songs
                 .Include(i => i.Album)
-                .ThenInclude(a => a.Artist)
+                .Include(i => i.Artist)
                 .Include(i => i.Genre)
                 .SingleOrDefault(i => i.Id == id);
             if (song == null)
@@ -57,7 +57,8 @@ namespace api.Infrastructure.Persistence
                 AlbumId = i.AlbumId,
                 AlbumName = i.Album.Title,
                 AlbumCover = Convert.ToBase64String(i.Album.Cover),
-                ArtistName = i.Album.Artist.Name,
+                ArtistId = i.ArtistId,
+                ArtistName = i.Artist.Name,
                 GenreId = i.GenreId,
                 GenreName = i.Genre.Name,
                 Duration = TimeSpanConverter.ToString(i.Duration),
@@ -77,7 +78,7 @@ namespace api.Infrastructure.Persistence
             _context.SaveChanges();
             _context.Entry(song).Reference(i => i.Genre).Load();
             _context.Entry(song).Reference(i => i.Album).Load();
-            _context.Entry(song.Album).Reference(a => a.Artist).Load();
+            _context.Entry(song).Reference(i => i.Artist).Load();
             return song;
         }
 
@@ -87,7 +88,7 @@ namespace api.Infrastructure.Persistence
             _context.SaveChanges();
             _context.Entry(song).Reference(i => i.Genre).Load();
             _context.Entry(song).Reference(i => i.Album).Load();
-            _context.Entry(song.Album).Reference(a => a.Artist).Load();
+            _context.Entry(song).Reference(i => i.Artist).Load();
             return song;
         }
     }

@@ -8,8 +8,6 @@ public class AlbumMapperProfile : Profile
 {
     public AlbumMapperProfile()
     {
-        CreateMap<Album, AlbumDto>()
-            .ForMember(dest => dest.ArtistName, opt => opt.MapFrom(src => src.Artist.Name));
-        CreateMap<AlbumDto, Album>();
+        CreateMap<Album, AlbumDto>().ReverseMap();
     }
 }
