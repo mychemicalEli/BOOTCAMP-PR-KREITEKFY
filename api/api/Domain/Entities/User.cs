@@ -28,7 +28,7 @@ public class User
     [MaxLength(100)]
     public string Password { get; set; }
 
-
     [Required] public long RoleId { get; set; }
     [Required] public Role Role { get; set; }
+    public ICollection<UserSongs> UserSongs { get; set; }
 }

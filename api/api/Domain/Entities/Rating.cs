@@ -3,14 +3,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace api.Domain.Entities;
 
-[Table("user_songs")]
-public class UserSongs
+[Table("ratings")]
+public class Rating
 {
     public long Id { get; set; }
     [Required] public long UserId { get; set; }
     public User User { get; set; }
     [Required] public long SongId { get; set; }
     public Song Song { get; set; }
-    [Required] public DateTime? LastPlayedAt { get; set; }
-    [Required] public long TotalStreams { get; set; }
+    [Range(1, 4)] public int Stars { get; set; }
 }
