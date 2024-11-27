@@ -7,5 +7,5 @@ public class RatingDto : IDto
     public long Id { get; set; }
     public long UserId { get; set; }
     public long SongId { get; set; }
-    public int Stars { get; set; }
+    public decimal Stars { get; set; }
 }
