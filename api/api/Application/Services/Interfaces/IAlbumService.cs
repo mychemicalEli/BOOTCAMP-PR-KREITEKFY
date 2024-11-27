@@ -5,5 +5,4 @@ namespace api.Application.Services.Interfaces;
 
 public interface IAlbumService : IGenericService<AlbumDto>
 {
-    List<AlbumDto> GetAllAlbumsWithArtistName();
 }

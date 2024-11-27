@@ -10,20 +10,14 @@ namespace api.Application.Services.Implementations;
 
 public class AlbumService : GenericService<Album, AlbumDto>, IAlbumService
 {
-    private readonly IAlbumRepository _repository;
     private readonly IImageVerifier _imageVerifier;
 
     public AlbumService(IAlbumRepository repository, IMapper mapper, IImageVerifier imageVerifier) : base(repository,
         mapper)
     {
-        _repository = repository;
         _imageVerifier = imageVerifier;
     }
 
-    public List<AlbumDto> GetAllAlbumsWithArtistName()
-    {
-        return _repository.GetAllAlbumsWithArtistName();
-    }
 
     public override AlbumDto Insert(AlbumDto dto)
     {

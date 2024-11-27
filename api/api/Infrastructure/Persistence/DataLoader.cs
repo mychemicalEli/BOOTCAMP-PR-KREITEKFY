@@ -108,12 +108,13 @@ public class DataLoader
             },
             () =>
             {
-                if (!_kreitekfyContext.Artists.Any()) LoadArtists();
+                if (!_kreitekfyContext.Albums.Any()) LoadAlbums();
             },
             () =>
             {
-                if (!_kreitekfyContext.Albums.Any()) LoadAlbums();
+                if (!_kreitekfyContext.Artists.Any()) LoadArtists();
             },
+
             () =>
             {
                 if (!_kreitekfyContext.Songs.Any()) LoadSongs();
@@ -206,34 +207,31 @@ public class DataLoader
     {
         var albums = new Album[]
         {
-            new Album { Title = "Nightmare", ArtistId = 1, Cover = nightmareCover },
-            new Album { Title = "City of Evil", ArtistId = 1, Cover = cityOfEvilCover },
-            new Album { Title = "Popular Monster", ArtistId = 2, Cover = popularMonsterCover },
-            new Album { Title = "The Drug in Me is You", ArtistId = 2, Cover = drugInMeCover },
-            new Album { Title = "Hybrid Theory", ArtistId = 3, Cover = hybridTheoryCover },
-            new Album { Title = "Meteora", ArtistId = 3, Cover = meteoraCover },
-            new Album { Title = "Hotel Diablo", ArtistId = 4, Cover = hotelDiabloCover },
-            new Album { Title = "Tickets to My Downfall", ArtistId = 4, Cover = ticketsCover },
-            new Album { Title = "Enema of the State", ArtistId = 5, Cover = enemaStateCover },
-            new Album { Title = "Dude Ranch", ArtistId = 5, Cover = dudeRanchCover },
-            new Album { Title = "Nothing Personal", ArtistId = 6, Cover = nothingPersonalCover },
-            new Album { Title = "So Wrong It's Right", ArtistId = 6, Cover = soWrongCover },
-            new Album { Title = "Dookie", ArtistId = 7, Cover = dookieCover },
-            new Album { Title = "21st Century Breakdown", ArtistId = 7, Cover = twentyFirstCover },
-            new Album { Title = "The Black Parade", ArtistId = 8, Cover = blackParadeCover },
-            new Album
-            {
-                Title = "Danger Days: The True Lives of the Fabulous Killjoys", ArtistId = 8, Cover = dangerDaysCover
-            },
-            new Album { Title = "Il Ballo Della Vita", ArtistId = 9, Cover = balloVitaCover },
-            new Album { Title = "Rush!", ArtistId = 9, Cover = rushCover },
-            new Album { Title = "Born With a Broken Heart", ArtistId = 10, Cover = brokenHeartCover },
-            new Album { Title = "Silverlines", ArtistId = 10, Cover = silverlinesCover },
-            new Album { Title = "Fine Line", ArtistId = 11, Cover = fineLineCover },
-            new Album { Title = "Harry Styles", ArtistId = 11, Cover = harryStylesCover },
-            new Album { Title = "Midnight Memories", ArtistId = 12, Cover = midnightMemoriesCover },
-            new Album { Title = "Fin del Mundo", ArtistId = 13, Cover = finDelMundoCover },
-            new Album { Title = "COWBOYS DE LA A3", ArtistId = 14, Cover = cowboysCover },
+            new Album { Title = "Nightmare", Cover = nightmareCover },
+            new Album { Title = "City of Evil", Cover = cityOfEvilCover },
+            new Album { Title = "Popular Monster", Cover = popularMonsterCover },
+            new Album { Title = "The Drug in Me is You", Cover = drugInMeCover },
+            new Album { Title = "Hybrid Theory", Cover = hybridTheoryCover },
+            new Album { Title = "Meteora", Cover = meteoraCover },
+            new Album { Title = "Hotel Diablo", Cover = hotelDiabloCover },
+            new Album { Title = "Tickets to My Downfall", Cover = ticketsCover },
+            new Album { Title = "Enema of the State", Cover = enemaStateCover },
+            new Album { Title = "Dude Ranch", Cover = dudeRanchCover },
+            new Album { Title = "Nothing Personal", Cover = nothingPersonalCover },
+            new Album { Title = "So Wrong It's Right", Cover = soWrongCover },
+            new Album { Title = "Dookie", Cover = dookieCover },
+            new Album { Title = "21st Century Breakdown", Cover = twentyFirstCover },
+            new Album { Title = "The Black Parade", Cover = blackParadeCover },
+            new Album { Title = "Danger Days: The True Lives of the Fabulous Killjoys", Cover = dangerDaysCover },
+            new Album { Title = "Il Ballo Della Vita", Cover = balloVitaCover },
+            new Album { Title = "Rush!", Cover = rushCover },
+            new Album { Title = "Born With a Broken Heart", Cover = brokenHeartCover },
+            new Album { Title = "Silverlines", Cover = silverlinesCover },
+            new Album { Title = "Fine Line", Cover = fineLineCover },
+            new Album { Title = "Harry Styles", Cover = harryStylesCover },
+            new Album { Title = "Midnight Memories", Cover = midnightMemoriesCover },
+            new Album { Title = "Fin del Mundo", Cover = finDelMundoCover },
+            new Album { Title = "COWBOYS DE LA A3", Cover = cowboysCover },
         };
         foreach (Album album in albums)
         {
@@ -248,63 +246,63 @@ public class DataLoader
             //Metal
             new Song
             {
-                Title = "So Far Away", AlbumId = 1,
+                Title = "So Far Away", ArtistId = 1, AlbumId = 1,
                 GenreId = 1, Duration = new TimeSpan(0, 5, 12), Rating = 4.2m, Streams = 100,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "Nightmare", AlbumId = 1,
+                Title = "Nightmare", ArtistId = 1, AlbumId = 1,
                 GenreId = 1, Duration = new TimeSpan(0, 6, 16), Rating = 4m, Streams = 72,
                 AddedAt = DateTime.UtcNow
             },
 
             new Song
             {
-                Title = "Bat Country", AlbumId = 2,
+                Title = "Bat Country", ArtistId = 1, AlbumId = 2,
                 GenreId = 1, Duration = new TimeSpan(0, 5, 14), Rating = 3.6m, Streams = 80,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "Beast and the Harlot", AlbumId = 2,
+                Title = "Beast and the Harlot", ArtistId = 1, AlbumId = 2,
                 GenreId = 1, Duration = new TimeSpan(0, 5, 41), Rating = 3.9m, Streams = 50,
                 AddedAt = DateTime.UtcNow
             },
 
             new Song
             {
-                Title = "Popular Monster", AlbumId = 3,
+                Title = "Popular Monster", ArtistId = 2, AlbumId = 3,
                 GenreId = 1, Duration = new TimeSpan(0, 3, 30), Rating = 2.8m, Streams = 35,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "The Drug in Me is You", AlbumId = 4,
+                Title = "The Drug in Me is You", ArtistId = 2, AlbumId = 4,
                 GenreId = 1, Duration = new TimeSpan(0, 4, 00), Rating = 3.2m, Streams = 40,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "I'm not a Vampire", AlbumId = 4,
+                Title = "I'm not a Vampire", ArtistId = 2, AlbumId = 4,
                 GenreId = 1, Duration = new TimeSpan(0, 4, 02), Rating = 4m, Streams = 32,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "In the End", AlbumId = 5,
+                Title = "In the End", ArtistId = 3, AlbumId = 5,
                 GenreId = 1, Duration = new TimeSpan(0, 3, 36), Rating = 4m, Streams = 10,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "Crawling", AlbumId = 6,
+                Title = "Crawling", ArtistId = 3, AlbumId = 6,
                 GenreId = 1, Duration = new TimeSpan(0, 3, 29), Rating = 2.4m, Streams = 90,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "Numb", AlbumId = 6,
+                Title = "Numb", ArtistId = 3, AlbumId = 6,
                 GenreId = 1, Duration = new TimeSpan(0, 3, 06), Rating = 3.3m, Streams = 95,
                 AddedAt = DateTime.UtcNow
             },
@@ -313,63 +311,63 @@ public class DataLoader
 
             new Song
             {
-                Title = "I Think I'm OKAY", AlbumId = 7,
+                Title = "I Think I'm OKAY", ArtistId = 4, AlbumId = 7,
                 GenreId = 2, Duration = new TimeSpan(0, 2, 49), Rating = 4m, Streams = 55,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "Bloody Valentine", AlbumId = 8,
+                Title = "Bloody Valentine", ArtistId = 4, AlbumId = 8,
                 GenreId = 2, Duration = new TimeSpan(0, 2, 40), Rating = 3.6m, Streams = 80,
                 AddedAt = DateTime.UtcNow
             },
 
             new Song
             {
-                Title = "My Ex's Best Friend", AlbumId = 8,
+                Title = "My Ex's Best Friend", ArtistId = 4, AlbumId = 8,
                 GenreId = 2, Duration = new TimeSpan(0, 2, 45), Rating = 4m, Streams = 70,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "Concert for Aliens", AlbumId = 8,
+                Title = "Concert for Aliens", ArtistId = 4, AlbumId = 8,
                 GenreId = 2, Duration = new TimeSpan(0, 2, 58), Rating = 2.6m, Streams = 60,
                 AddedAt = DateTime.UtcNow
             },
 
             new Song
             {
-                Title = "All the Small Things", AlbumId = 9,
+                Title = "All the Small Things", ArtistId = 5, AlbumId = 9,
                 GenreId = 2, Duration = new TimeSpan(0, 2, 51), Rating = 2.9m, Streams = 95,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "What's My Age Again?", AlbumId = 9,
+                Title = "What's My Age Again?", ArtistId = 5, AlbumId = 9,
                 GenreId = 2, Duration = new TimeSpan(0, 2, 23), Rating = 3.9m, Streams = 90,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "Dammit", AlbumId = 10,
+                Title = "Dammit", ArtistId = 5, AlbumId = 10,
                 GenreId = 2, Duration = new TimeSpan(0, 2, 45), Rating = 4m, Streams = 75,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "Weightless", AlbumId = 11,
+                Title = "Weightless", ArtistId = 6, AlbumId = 11,
                 GenreId = 2, Duration = new TimeSpan(0, 3, 01), Rating = 2.7m, Streams = 72,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "Dear Maria, Count Me In", AlbumId = 12,
+                Title = "Dear Maria, Count Me In", ArtistId = 6, AlbumId = 12,
                 GenreId = 2, Duration = new TimeSpan(0, 3, 03), Rating = 2.9m, Streams = 82,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "Poppin' Champagne", AlbumId = 12,
+                Title = "Poppin' Champagne", ArtistId = 6, AlbumId = 12,
                 GenreId = 2, Duration = new TimeSpan(0, 3, 25), Rating = 4m, Streams = 69,
                 AddedAt = DateTime.UtcNow
             },
@@ -378,62 +376,62 @@ public class DataLoader
 
             new Song
             {
-                Title = "Basket Case", AlbumId = 13,
+                Title = "Basket Case", ArtistId = 7, AlbumId = 13,
                 GenreId = 3, Duration = new TimeSpan(0, 3, 03), Rating = 3m, Streams = 10,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "Basket Case", AlbumId = 13,
+                Title = "Basket Case", ArtistId = 7, AlbumId = 13,
                 GenreId = 3, Duration = new TimeSpan(0, 3, 03), Rating = 4m, Streams = 100,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "Know Your Enemy", AlbumId = 14,
+                Title = "Know Your Enemy", ArtistId = 7, AlbumId = 14,
                 GenreId = 3, Duration = new TimeSpan(0, 3, 12), Rating = 3.2m, Streams = 90,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "Helena", AlbumId = 15,
+                Title = "Helena", ArtistId = 8, AlbumId = 15,
                 GenreId = 3, Duration = new TimeSpan(0, 3, 22), Rating = 4m, Streams = 11,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "Welcome to the Black Parade", AlbumId = 15,
+                Title = "Welcome to the Black Parade", ArtistId = 8, AlbumId = 15,
                 GenreId = 3, Duration = new TimeSpan(0, 5, 11), Rating = 4m, Streams = 13,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "SING", AlbumId = 16,
+                Title = "SING", ArtistId = 8, AlbumId = 16,
                 GenreId = 3, Duration = new TimeSpan(0, 3, 10), Rating = 3.8m, Streams = 80,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "Na Na Na (Na Na Na Na Na Na Na Na Na)", AlbumId = 16,
+                Title = "Na Na Na (Na Na Na Na Na Na Na Na Na)", ArtistId = 8, AlbumId = 16,
                 GenreId = 3, Duration = new TimeSpan(0, 4, 06), Rating = 3.3m, Streams = 105,
                 AddedAt = DateTime.UtcNow
             },
 
             new Song
             {
-                Title = "Torna A Casa", AlbumId = 17,
+                Title = "Torna A Casa", ArtistId = 9, AlbumId = 17,
                 GenreId = 3, Duration = new TimeSpan(0, 4, 25), Rating = 2.2m, Streams = 85,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "Zitti E Buoni", AlbumId = 17,
+                Title = "Zitti E Buoni", ArtistId = 9, AlbumId = 17,
                 GenreId = 3, Duration = new TimeSpan(0, 3, 28), Rating = 4m, Streams = 15,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "Mamma Mia", AlbumId = 18,
+                Title = "Mamma Mia", ArtistId = 9, AlbumId = 18,
                 GenreId = 3, Duration = new TimeSpan(0, 3, 30), Rating = 4m, Streams = 95,
                 AddedAt = DateTime.UtcNow
             },
@@ -443,57 +441,57 @@ public class DataLoader
 
             new Song
             {
-                Title = "Born With a Broken Heart", AlbumId = 19,
+                Title = "Born With a Broken Heart", ArtistId = 10, AlbumId = 19,
                 GenreId = 4, Duration = new TimeSpan(0, 3, 15), Rating = 4m, Streams = 50,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "Silverlines", AlbumId = 20,
+                Title = "Silverlines", ArtistId = 10, AlbumId = 20,
                 GenreId = 4, Duration = new TimeSpan(0, 3, 04), Rating = 4m, Streams = 42,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "Watermelon Sugar", AlbumId = 21,
+                Title = "Watermelon Sugar", ArtistId = 11, AlbumId = 21,
                 GenreId = 4, Duration = new TimeSpan(0, 2, 54), Rating = 3.9m, Streams = 75,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "Adore You", AlbumId = 21,
+                Title = "Adore You", ArtistId = 11, AlbumId = 21,
                 GenreId = 4, Duration = new TimeSpan(0, 3, 27), Rating = 2.3m, Streams = 55,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "Sign of the Times", AlbumId = 22,
+                Title = "Sign of the Times", ArtistId = 11, AlbumId = 22,
                 GenreId = 4, Duration = new TimeSpan(0, 4, 00), Rating = 2.8m, Streams = 70,
                 AddedAt = DateTime.UtcNow
             },
 
             new Song
             {
-                Title = "Story of My Life", AlbumId = 23,
+                Title = "Story of My Life", ArtistId = 12, AlbumId = 23,
                 GenreId = 4, Duration = new TimeSpan(0, 4, 05), Rating = 4m, Streams = 65,
                 AddedAt = DateTime.UtcNow
             },
 
             new Song
             {
-                Title = "Quédate Conmigo", AlbumId = 24,
+                Title = "Quédate Conmigo", ArtistId = 13, AlbumId = 24,
                 GenreId = 4, Duration = new TimeSpan(0, 3, 30), Rating = 2.3m, Streams = 30,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "Fin del Mundo", AlbumId = 24,
+                Title = "Fin del Mundo", ArtistId = 13, AlbumId = 24,
                 GenreId = 4, Duration = new TimeSpan(0, 3, 12), Rating = 3m, Streams = 35,
                 AddedAt = DateTime.UtcNow
             },
             new Song
             {
-                Title = "Cowboys de la A3", AlbumId = 25,
+                Title = "Cowboys de la A3", ArtistId = 14, AlbumId = 25,
                 GenreId = 4, Duration = new TimeSpan(0, 3, 45), Rating = 2.8m, Streams = 25,
                 AddedAt = DateTime.UtcNow
             }

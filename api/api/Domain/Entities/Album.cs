@@ -14,7 +14,6 @@ public class Album
     public string Title { get; set; }
 
     [Required] public byte[] Cover { get; set; }
-    [Required] public long ArtistId { get; set; }
-    [Required] public Artist Artist { get; set; }
+
     public ICollection<Song> Songs { get; set; }
 }
