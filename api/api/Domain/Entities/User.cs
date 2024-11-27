@@ -30,5 +30,7 @@ public class User
 
     [Required] public long RoleId { get; set; }
     [Required] public Role Role { get; set; }
+    public ICollection<Rating> Ratings { get; set; }
     public ICollection<UserSongs> UserSongs { get; set; }
+  
 }

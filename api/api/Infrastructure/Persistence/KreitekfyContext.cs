@@ -30,7 +30,7 @@ public class KreitekfyContext : DbContext
 
         modelBuilder.Entity<Song>()
             .HasOne(i => i.Album)
-            .WithMany()
+            .WithMany(a => a.Songs)
             .HasForeignKey(i => i.AlbumId)
             .IsRequired()
             .OnDelete(DeleteBehavior.Cascade);
@@ -43,26 +43,26 @@ public class KreitekfyContext : DbContext
 
 
         modelBuilder.Entity<UserSongs>()
-            .HasOne<User>()
-            .WithMany()
+            .HasOne<User>(i => i.User)
+            .WithMany(us => us.UserSongs)
             .HasForeignKey(us => us.UserId)
             .OnDelete(DeleteBehavior.Cascade);
 
         modelBuilder.Entity<UserSongs>()
-            .HasOne<Song>()
-            .WithMany()
+            .HasOne<Song>(i => i.Song)
+            .WithMany(us => us.UserSongs)
             .HasForeignKey(us => us.SongId)
             .OnDelete(DeleteBehavior.Cascade);
 
         modelBuilder.Entity<Rating>()
-            .HasOne<User>()
-            .WithMany()
+            .HasOne<User>(i => i.User)
+            .WithMany(r => r.Ratings)
             .HasForeignKey(r => r.UserId)
             .OnDelete(DeleteBehavior.Cascade);
 
         modelBuilder.Entity<Rating>()
-            .HasOne<Song>()
-            .WithMany()
+            .HasOne<Song>(i => i.Song)
+            .WithMany(r => r.Ratings)
             .HasForeignKey(r => r.SongId)
             .OnDelete(DeleteBehavior.Cascade);
     }
